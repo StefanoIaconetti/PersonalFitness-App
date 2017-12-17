@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -24,7 +23,8 @@ public class MainActivity extends AppCompatActivity
         HomeFragment.OnFragmentInteractionListener,
         ContactFragment.OnFragmentInteractionListener,
         WaterIntakeFragment.OnFragmentInteractionListener,
-        WorkoutFragment.OnFragmentInteractionListener{
+        WorkoutFragment.OnFragmentInteractionListener,
+        ScheduleFragment.OnFragmentInteractionListener{
 
     FragmentManager fm = getSupportFragmentManager();
     //FragmentManager fm = getSupportFragmentManager();
@@ -106,14 +106,28 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             tran.replace(R.id.content, new HomeFragment(), "Home");
+            tran.addToBackStack(null);
+            tran.commit();
         } else if (id == R.id.nav_BMI) {
             tran.replace(R.id.content, new BMIFragment(), "BMI");
+            tran.addToBackStack(null);
+            tran.commit();
         } else if (id == R.id.nav_Water) {
             tran.replace(R.id.content, new WaterIntakeFragment(), "WaterIntake");
+            tran.addToBackStack(null);
+            tran.commit();
         } else if (id == R.id.nav_Workouts) {
             tran.replace(R.id.content, new WorkoutFragment(), "Workouts");
-        } else if (id == R.id.nav_contact) {
+            tran.addToBackStack(null);
+            tran.commit();
+        } else if (id == R.id.nav_schedule) {
+            tran.replace(R.id.content, new ScheduleFragment(), "Schedule");
+            tran.addToBackStack(null);
+            tran.commit();
+        }else if (id == R.id.nav_contact) {
             tran.replace(R.id.content, new ContactFragment(), "Contact");
+            tran.addToBackStack(null);
+            tran.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
