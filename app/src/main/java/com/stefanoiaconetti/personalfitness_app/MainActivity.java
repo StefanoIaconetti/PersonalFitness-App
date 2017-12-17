@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity
         HomeFragment.OnFragmentInteractionListener,
         ContactFragment.OnFragmentInteractionListener,
         WaterIntakeFragment.OnFragmentInteractionListener,
-        WorkoutFragment.OnFragmentInteractionListener{
+        WorkoutFragment.OnFragmentInteractionListener,
+        ScheduleFragment.OnFragmentInteractionListener{
 
     FragmentManager fm = getSupportFragmentManager();
     //FragmentManager fm = getSupportFragmentManager();
@@ -105,16 +106,28 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             tran.replace(R.id.content, new HomeFragment(), "Home");
+            tran.addToBackStack(null);
+            tran.commit();
         } else if (id == R.id.nav_BMI) {
             tran.replace(R.id.content, new BMIFragment(), "BMI");
+            tran.addToBackStack(null);
+            tran.commit();
         } else if (id == R.id.nav_Water) {
             tran.replace(R.id.content, new WaterIntakeFragment(), "WaterIntake");
+            tran.addToBackStack(null);
+            tran.commit();
         } else if (id == R.id.nav_Workouts) {
             tran.replace(R.id.content, new WorkoutFragment(), "Workouts");
+            tran.addToBackStack(null);
+            tran.commit();
         } else if (id == R.id.nav_schedule) {
-            tran.replace(R.id.content, new ContactFragment(), "Schedule");
+            tran.replace(R.id.content, new ScheduleFragment(), "Schedule");
+            tran.addToBackStack(null);
+            tran.commit();
         }else if (id == R.id.nav_contact) {
             tran.replace(R.id.content, new ContactFragment(), "Contact");
+            tran.addToBackStack(null);
+            tran.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
