@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -112,7 +111,9 @@ public class MainActivity extends AppCompatActivity
             tran.replace(R.id.content, new WaterIntakeFragment(), "WaterIntake");
         } else if (id == R.id.nav_Workouts) {
             tran.replace(R.id.content, new WorkoutFragment(), "Workouts");
-        } else if (id == R.id.nav_contact) {
+        } else if (id == R.id.nav_schedule) {
+            tran.replace(R.id.content, new ContactFragment(), "Schedule");
+        }else if (id == R.id.nav_contact) {
             tran.replace(R.id.content, new ContactFragment(), "Contact");
         }
 
