@@ -6,27 +6,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="Home" />
         <item
             android:id="@+id/nav_BMI"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_person_black_24dp"
             android:title="BMI Calculator" />
         <item
             android:id="@+id/nav_Workouts"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_fitness_center_black_24dp"
             android:title="Workouts" />
         <item
             android:id="@+id/nav_Water"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_local_drink_black_24dp"
             android:title="Water Intake Calculator" />
         <item
             android:id="@+id/nav_schedule"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_date_range_black_24dp"
             android:title="Schedule an appointment" />
         <item
             android:id="@+id/nav_contact"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_email_black_24dp"
             android:title="Contact Us" />
     </group>
 
