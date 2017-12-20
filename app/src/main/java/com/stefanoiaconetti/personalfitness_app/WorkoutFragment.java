@@ -11,12 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -71,8 +68,6 @@ public class WorkoutFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_workout, container, false);
 
@@ -89,28 +84,26 @@ public class WorkoutFragment extends Fragment {
         return view;
     }
 
-//    public class CustomAdapter extends FragmentPagerAdapter{
-//        public CustomAdapter(FragmentManager fm){
-//            super(fm);
-//        }
-//
-//        public Fragment getItem(int position){
-//            switch(position){
-//                case 0: return
-//                case 1: return
-//                case 2: return
-//                case 3: return
-//                case 4: return
-//                default: return
-//            }
-//        }
-//
-//        public int getCount(){
-//            return 5;
-//        }
-//
-//    }
+    public class CustomAdapter extends FragmentPagerAdapter{
+        public CustomAdapter(FragmentManager fm){
+            super(fm);
+        }
 
+        public Fragment getItem(int position){
+            ArrayList<WorkoutItem> workout = new ArrayList<WorkoutItem>();
+            switch(position){
+                case 0: return WorkoutFragment.newInstance("Step 1", "Sit down");
+                case 1: return
+                case 2: return
+                case 3: return
+                case 4: return
+                default: return
+            }
+        }
+        public int getCount(){
+            return 5;
+        }
+    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -134,7 +127,6 @@ public class WorkoutFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
