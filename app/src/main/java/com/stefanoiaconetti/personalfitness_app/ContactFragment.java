@@ -1,12 +1,14 @@
 package com.stefanoiaconetti.personalfitness_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -63,8 +65,37 @@ public class ContactFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        View view = inflater.inflate(R.layout.fragment_contact, container, false);
+
+        Button emailButton = (Button) view.findViewById(R.id.emailButton);
+        Button callButton = (Button) view.findViewById(R.id.callButton);
+
+        emailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String[] emailAddress = {"@string/company_email_address"};
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL, emailAddress);
+                if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivity(intent);
+                }
+            }
+        });
+
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + 1234567889));
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -105,4 +136,5 @@ public class ContactFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
 }
