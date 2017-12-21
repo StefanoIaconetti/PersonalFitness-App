@@ -4,25 +4,21 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link WorkoutFragment.OnFragmentInteractionListener} interface
+ * {@link WorkoutViewPager.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link WorkoutFragment#newInstance} factory method to
+ * Use the {@link WorkoutViewPager#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class WorkoutFragment extends Fragment {
+public class WorkoutViewPager extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,10 +27,10 @@ public class WorkoutFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private CustomAdapter adapter;
     private OnFragmentInteractionListener mListener;
 
-    public WorkoutFragment() {
+    public WorkoutViewPager() {
         // Required empty public constructor
     }
 
@@ -44,13 +40,14 @@ public class WorkoutFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment WorkoutFragment.
+     * @return A new instance of fragment WorkoutViewPager.
      */
     // TODO: Rename and change types and number of parameters
-    public static WorkoutFragment newInstance(String param1, String param2) {
-        WorkoutFragment fragment = new WorkoutFragment();
+    public static WorkoutViewPager newInstance(String param1, String param2) {
+        WorkoutViewPager fragment = new WorkoutViewPager();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -68,34 +65,14 @@ public class WorkoutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_workout, container, false);
-
-        ArrayList<WorkoutItem> workout = new ArrayList<WorkoutItem>();
-
-        workout.add(new WorkoutItem("Step 1", "Sit down"));
-        workout.add(new WorkoutItem("Step 2", "Stand up"));
-        RecyclerView recyclerView = view.findViewById(R.id.armsRecyclerView);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        CustomRecyclerViewAdapter adapter = new CustomRecyclerViewAdapter(workout);
-        recyclerView.setAdapter(adapter);
+        View view =  inflater.inflate(R.layout.fragment_workout_view_pager, container, false);
+        adapter = new CustomAdapter(getActivity().getSupportFragmentManager());
+        viewpager = (ViewPager) view.findViewById(R.id.viewPagerWorkouts);
+        viewpager.setAdapter(adapter);
         return view;
+
     }
 
-   // public Fragment getItem(int position){
-     //   ArrayList<WorkoutItem> workout = new ArrayList<WorkoutItem>();
-     //   WorkoutItem workout1 =  new WorkoutItem("Step 1", "Sit down");
-      //  switch(position){
-        //    case 0: return WorkoutViewPager.newInstance(workout1, "image");
-       // }
-   // }
-
-  //  public int getCount(){
-    //    return 5;
-   // }
-
-//}
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -119,6 +96,7 @@ public class WorkoutFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

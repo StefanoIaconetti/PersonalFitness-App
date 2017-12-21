@@ -2,15 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.stefanoiaconetti.personalfitness_app.WorkoutFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.stefanoiaconetti.personalfitness_app.WorkoutViewPager">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/armsRecyclerView"
+
+    <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
+        android:id="@+id/viewPagerWorkouts"
 
-
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 </LinearLayout>
