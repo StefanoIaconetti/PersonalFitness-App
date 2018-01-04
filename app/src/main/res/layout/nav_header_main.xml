@@ -12,6 +12,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:adjustViewBounds="false"
+        android:paddingTop="16dp"
+        android:scaleType="fitStart"
+        app:srcCompat="@mipmap/ic_personallogo" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +32,6 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/company_email_address" />

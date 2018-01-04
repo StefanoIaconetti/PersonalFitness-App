@@ -8,21 +8,16 @@
     <string name="action_settings">Settings</string>
 
     <string name="ScheduleTitle">Schedule your appointment today!</string>
-    <string name="ScheduleButton">Schedule</string>
 
-    //Contact information
-    <string name="max_name">Max Fontes</string>
-    <string name="stefano_name">Stefano Iaconetti</string>
-    <string name="max_email_address">max.fontes01@stclairconnect.ca</string>
-    <string name="stefano_email_address">stefano.iaconetti01@stclairconnect.ca</string>
+    <!--Contact information-->
     <string name="company_name">Burning Barbell</string>
     <string name="company_email_address">burningbarbell@gmail.com</string>
-    <string name="company_phone_number">1230987629</string>
 
-    //Button labels
+    <!--Button labels-->
     <string name="email_button">Email Us</string>
     <string name="call_button">Call Us</string>
 
+<<<<<<< HEAD
     <string name="BMI_button">Calculate</string>
 
     //Page titles
@@ -40,4 +35,17 @@
     //BMI info
     <string name="bmi_info">BMI Categories:\nUnderweight = 18.5 or lower\nHealthy weight = 18.5–24.9\nOverweight = 25–29.9\nObese = 30 or greater</string>
 
+=======
+    <!--Quote of the day labels-->
+    <string name="quoteOne">You can loose more fat by drinking lots of water, our personal water intake calculator can help!</string>
+    <string name="quoteTwo">Do not know how to properly workout? Send us a email and we can get you started on our 7 week program!</string>
+    <string name="quoteThree">Have any personal questions? Book an appointment with us by using the schedule button on the app! </string>
+    <string name="quoteFour">Hungry? Try drinking more water it usually helps satisfy hunger</string>
+    <string name="quoteFive">Rougly 70% of weight loss starts with your diet!</string>
+    <string name="quoteSix">Try exercising a little everyday. A simple 30 jumping jacks could suffice and make a huge difference</string>
+
+
+
+    <!-- Page titles -->
+>>>>>>> staging
 </resources>
