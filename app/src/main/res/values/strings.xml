@@ -23,6 +23,8 @@
     <string name="email_button">Email Us</string>
     <string name="call_button">Call Us</string>
 
+    <string name="BMI_button">Calculate</string>
+
     //Page titles
     <string name="bmi_calculator_title">BMI Calculator</string>
     <string name="contact_title">Contact</string>
@@ -30,4 +32,12 @@
     <string name="schedule_title">Schedule</string>
     <string name="water_intake_calculator_title">Water Intake Calculator</string>
     <string name="workouts_title">Workouts</string>
+
+    //BMI Calculator input hints
+    <string name="height_input">Your height (feet)</string>
+    <string name="weight_input">Your weight (lbs)</string>
+
+    //BMI info
+    <string name="bmi_info">BMI Categories:\nUnderweight = 18.5 or lower\nHealthy weight = 18.5–24.9\nOverweight = 25–29.9\nObese = 30 or greater</string>
+
 </resources>
