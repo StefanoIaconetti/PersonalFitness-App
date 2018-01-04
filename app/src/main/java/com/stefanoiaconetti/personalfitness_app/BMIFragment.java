@@ -7,6 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 
 /**
@@ -26,6 +31,11 @@ public class BMIFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    EditText height;
+    EditText weight;
+    Button calculateBMI;
+    TextView result;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,7 +74,39 @@ public class BMIFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bmi, container, false);
+        View view = inflater.inflate(R.layout.fragment_bmi, container, false);
+
+        height = (EditText) view.findViewById(R.id.height);
+        weight = (EditText) view.findViewById(R.id.weight);
+        result = (TextView) view.findViewById(R.id.BMIResult);
+        calculateBMI = (Button) view.findViewById(R.id.calculateBMI);
+
+        calculateBMI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                result.setText("");
+
+               double heightValue = Double.parseDouble(height.getText().toString());
+               double weightValue = Double.parseDouble(weight.getText().toString());
+
+               double feet = Math.floor(heightValue);
+
+               double inches = Math.round((heightValue - feet) * 10);
+               double convertedHeightValue = (feet * 12) + inches;
+
+               convertedHeightValue = convertedHeightValue * convertedHeightValue;
+
+               DecimalFormat decimalPlace = new DecimalFormat("##.#");
+
+               double BMI = (weightValue / convertedHeightValue) * 703;
+//               BMI = decimalPlace.format(BMI);
+
+               result.setText(BMI + "");
+            }
+        });
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

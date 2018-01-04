@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.Random;
 
 
 /**
@@ -48,6 +51,7 @@ public class HomeFragment extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -64,7 +68,43 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        //Randomizer
+        Random r = new Random();
+
+        int randomQuoteNum = r.nextInt(5);
+        //Quoteview is now linked with quoteText
+        TextView quoteView = (TextView) view.findViewById(R.id.quoteText);
+
+
+        //Switch case adds random quote so the quote changes everytime tha app opens
+        switch (randomQuoteNum){
+            case 0:
+                quoteView.setText(R.string.quoteOne);
+                break;
+            case 1:
+                quoteView.setText(R.string.quoteTwo);
+                break;
+            case 2:
+                quoteView.setText(R.string.quoteThree);
+                break;
+            case 3:
+                quoteView.setText(R.string.quoteThree);
+                break;
+            case 4:
+                quoteView.setText(R.string.quoteFour);
+                break;
+            case 5:
+                quoteView.setText(R.string.quoteFive);
+                break;
+
+
+        }
+
+        return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
