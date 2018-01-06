@@ -17,7 +17,10 @@
     <string name="email_button">Email Us</string>
     <string name="call_button">Call Us</string>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 06ac5f455b69cb77676873175b6728c0fe2a9cdb
     <string name="BMI_button">Calculate</string>
 
     //Page titles
