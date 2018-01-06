@@ -1,6 +1,7 @@
 package com.stefanoiaconetti.personalfitness_app;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 
 /**
@@ -99,65 +102,67 @@ public class WaterIntakeFragment extends Fragment {
         weight = (EditText) view.findViewById(R.id.weightEdit);
 
 
-        String check = weight.getText().toString();
 
-        if (check.isEmpty()) {
-            calculation.setText("Ooooo");
-        }else{
             //Calculations when button is pressed
             findOut.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    //Weightvalue is now parsed and turned into a double to ease calculations
-                    double weightValue = Double.parseDouble(weight.getText().toString());
+                    String check = weight.getText().toString();
 
-                    if (weightValue <= 0 || weightValue >= 500) {
-                        calculation.setText("Sorry your weight cannot be calculated");
-                    } else {
-                        //Calculations will be your weight multiplyed by 0.02841308(.5 of a oz in litres)
-                        double beforeExercise = weightValue * 0.5;
+                    if (check.isEmpty()) {
+                        calculation.setText("You have not entered a weight");
+                        weight.setHintTextColor(Color.RED);
+                    }else {
+                        //Weightvalue is now parsed and turned into a double to ease calculations
+                        double weightValue = Double.parseDouble(weight.getText().toString());
 
-                        beforeExercise = beforeExercise * 0.02841308;
+                        if (weightValue <= 0 || weightValue >= 500) {
+                            calculation.setText("Sorry your weight cannot be calculated");
+                        } else {
+                            //Calculations will be your weight multiplyed by 0.02841308(.5 of a oz in litres)
+                            double beforeExercise = weightValue * 0.5;
 
-                        int userSelection = spinner.getSelectedItemPosition();
-                        double userSelectionInt;
+                            beforeExercise = beforeExercise * 0.02841308;
 
-                        switch (userSelection) {
-                            case 0:
-                                userSelectionInt = 0;
-                                break;
-                            case 1:
-                                userSelectionInt = 0.3;
-                                break;
-                            case 2:
-                                userSelectionInt = 0.5;
-                                break;
-                            case 3:
-                                userSelectionInt = 0.8;
-                                break;
-                            case 4:
-                                userSelectionInt = 1;
-                                break;
-                            case 5:
-                                userSelectionInt = 2;
-                                break;
-                            default:
-                                userSelectionInt = 0;
-                                break;
+                            int userSelection = spinner.getSelectedItemPosition();
+                            double userSelectionInt;
+
+                            switch (userSelection) {
+                                case 0:
+                                    userSelectionInt = 0;
+                                    break;
+                                case 1:
+                                    userSelectionInt = 0.3;
+                                    break;
+                                case 2:
+                                    userSelectionInt = 0.5;
+                                    break;
+                                case 3:
+                                    userSelectionInt = 0.8;
+                                    break;
+                                case 4:
+                                    userSelectionInt = 1;
+                                    break;
+                                case 5:
+                                    userSelectionInt = 2;
+                                    break;
+                                default:
+                                    userSelectionInt = 0;
+                                    break;
+                            }
+
+                            double afterExercise = beforeExercise + userSelection;
+
+                            DecimalFormat decimalPlace = new DecimalFormat("0.0'0'");
+
+                            String finalCalc = decimalPlace.format(afterExercise) + "Litres";
+
+                            calculation.setText(finalCalc);
                         }
-
-                        double afterExercise = beforeExercise + userSelection;
-
-
-                        calculation.setText(afterExercise + "Litres");
                     }
                 }
-
             });
-
-        }
-
         return view;
     }
     // TODO: Rename method, update argument and hook method into UI event
