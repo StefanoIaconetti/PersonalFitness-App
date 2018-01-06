@@ -17,13 +17,10 @@
     <string name="email_button">Email Us</string>
     <string name="call_button">Call Us</string>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 06ac5f455b69cb77676873175b6728c0fe2a9cdb
     <string name="BMI_button">Calculate</string>
 
-    //Page titles
+    <!--Page titles -->
     <string name="bmi_calculator_title">BMI Calculator</string>
     <string name="contact_title">Contact</string>
     <string name="home_title">Home</string>
@@ -31,14 +28,14 @@
     <string name="water_intake_calculator_title">Water Intake Calculator</string>
     <string name="workouts_title">Workouts</string>
 
-    //BMI Calculator input hints
+    <!-- Calculator input hints -->
     <string name="height_input">Your height (feet)</string>
     <string name="weight_input">Your weight (lbs)</string>
+    <string name="age_input">Your age (yrs)</string>
 
-    //BMI info
+    <!--BMI info -->
     <string name="bmi_info">BMI Categories:\nUnderweight = 18.5 or lower\nHealthy weight = 18.5–24.9\nOverweight = 25–29.9\nObese = 30 or greater</string>
 
-=======
     <!--Quote of the day labels-->
     <string name="quoteOne">You can loose more fat by drinking lots of water, our personal water intake calculator can help!</string>
     <string name="quoteTwo">Do not know how to properly workout? Send us a email and we can get you started on our 7 week program!</string>
@@ -50,5 +47,5 @@
 
 
     <!-- Page titles -->
->>>>>>> staging
+
 </resources>
