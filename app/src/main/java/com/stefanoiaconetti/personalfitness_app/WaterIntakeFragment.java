@@ -76,10 +76,8 @@ public class WaterIntakeFragment extends Fragment {
         final Spinner spinner = (Spinner) view.findViewById(R.id.waterIntakeSpinner);
 
 
-
         //Textview for the calculation
         final TextView calculation = (TextView) view.findViewById(R.id.calculationsText);
-
 
 
         //String exerciseStats that is in the strings.xml is being called
@@ -98,64 +96,70 @@ public class WaterIntakeFragment extends Fragment {
         Button findOut = (Button) view.findViewById(R.id.findoutBtn);
 
         //Weight edit text being populated
-         weight = (EditText) view.findViewById(R.id.weightEdit);
-
-        //Calculations when button is pressed
-        findOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //Weightvalue is now parsed and turned into a double to ease calculations
-                 double weightValue = Double.parseDouble(weight.getText().toString());
-
-                 if(weight.getText() == null){
-                     calculation.setText("You have not added a weight");
-                 } else  if(weightValue < 0 || weightValue > 500){
-                     calculation.setText("Sorry your weight cannot be calculated");
-                 }else{
-                     //Calculations will be your weight multiplyed by 0.02841308(.5 of a oz in litres)
-                     double beforeExercise = weightValue * 0.5;
-
-                     beforeExercise = beforeExercise * 0.02841308;
-
-                     int userSelection = spinner.getSelectedItemPosition();
-                     double userSelectionInt;
-
-                     switch (userSelection) {
-                         case 0:
-                             userSelectionInt = 0;
-                             break;
-                         case 1:
-                             userSelectionInt = 0.3;
-                             break;
-                         case 2:
-                             userSelectionInt = 0.5;
-                             break;
-                         case 3:
-                             userSelectionInt = 0.8;
-                             break;
-                         case 4:
-                             userSelectionInt = 1;
-                             break;
-                         case 5:
-                             userSelectionInt = 2;
-                             break;
-                         default:
-                             userSelectionInt = 0;
-                             break;
-                     }
-
-                     double afterExercise = beforeExercise + userSelection;
+        weight = (EditText) view.findViewById(R.id.weightEdit);
 
 
-                     calculation.setText(afterExercise + "Litres");
-                 }
-            }
-        });
+        String check = weight.getText().toString();
+
+        if (check.isEmpty()) {
+            calculation.setText("Ooooo");
+        }else{
+            //Calculations when button is pressed
+            findOut.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    //Weightvalue is now parsed and turned into a double to ease calculations
+                    double weightValue = Double.parseDouble(weight.getText().toString());
+
+                    if (weightValue <= 0 || weightValue >= 500) {
+                        calculation.setText("Sorry your weight cannot be calculated");
+                    } else {
+                        //Calculations will be your weight multiplyed by 0.02841308(.5 of a oz in litres)
+                        double beforeExercise = weightValue * 0.5;
+
+                        beforeExercise = beforeExercise * 0.02841308;
+
+                        int userSelection = spinner.getSelectedItemPosition();
+                        double userSelectionInt;
+
+                        switch (userSelection) {
+                            case 0:
+                                userSelectionInt = 0;
+                                break;
+                            case 1:
+                                userSelectionInt = 0.3;
+                                break;
+                            case 2:
+                                userSelectionInt = 0.5;
+                                break;
+                            case 3:
+                                userSelectionInt = 0.8;
+                                break;
+                            case 4:
+                                userSelectionInt = 1;
+                                break;
+                            case 5:
+                                userSelectionInt = 2;
+                                break;
+                            default:
+                                userSelectionInt = 0;
+                                break;
+                        }
+
+                        double afterExercise = beforeExercise + userSelection;
+
+
+                        calculation.setText(afterExercise + "Litres");
+                    }
+                }
+
+            });
+
+        }
 
         return view;
     }
-
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
