@@ -26,12 +26,18 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/weight"
+        android:id="@+id/weightEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/weight_input"
         android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/findoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/waterIntakeBtn" />
 
     <TextView
         android:id="@+id/calculationsText"

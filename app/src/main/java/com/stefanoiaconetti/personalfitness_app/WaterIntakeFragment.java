@@ -8,7 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 /**
@@ -24,6 +27,7 @@ public class WaterIntakeFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    EditText weight;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -68,8 +72,16 @@ public class WaterIntakeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_water_intake, container, false);
 
-        //Spinner being called
-        Spinner spinner = (Spinner) view.findViewById(R.id.waterIntakeSpinner);
+        //spinner is now populated with waterintake spinner
+        final Spinner spinner = (Spinner) view.findViewById(R.id.waterIntakeSpinner);
+
+
+
+        //Textview for the calculation
+        final TextView calculation = (TextView) view.findViewById(R.id.calculationsText);
+
+
+
         //String exerciseStats that is in the strings.xml is being called
         String[] exerArray = getResources().getStringArray(R.array.exerciseStats);
         //Adapter for the spinner
@@ -82,7 +94,64 @@ public class WaterIntakeFragment extends Fragment {
         spinner.setAdapter(adapter);
 
 
+        //Button being popoulated
+        Button findOut = (Button) view.findViewById(R.id.findoutBtn);
 
+        //Weight edit text being populated
+         weight = (EditText) view.findViewById(R.id.weightEdit);
+
+        //Calculations when button is pressed
+        findOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Weightvalue is now parsed and turned into a double to ease calculations
+                 double weightValue = Double.parseDouble(weight.getText().toString());
+
+                 if(weight.getText() == null){
+                     calculation.setText("You have not added a weight");
+                 } else  if(weightValue < 0 || weightValue > 500){
+                     calculation.setText("Sorry your weight cannot be calculated");
+                 }else{
+                     //Calculations will be your weight multiplyed by 0.02841308(.5 of a oz in litres)
+                     double beforeExercise = weightValue * 0.5;
+
+                     beforeExercise = beforeExercise * 0.02841308;
+
+                     int userSelection = spinner.getSelectedItemPosition();
+                     double userSelectionInt;
+
+                     switch (userSelection) {
+                         case 0:
+                             userSelectionInt = 0;
+                             break;
+                         case 1:
+                             userSelectionInt = 0.3;
+                             break;
+                         case 2:
+                             userSelectionInt = 0.5;
+                             break;
+                         case 3:
+                             userSelectionInt = 0.8;
+                             break;
+                         case 4:
+                             userSelectionInt = 1;
+                             break;
+                         case 5:
+                             userSelectionInt = 2;
+                             break;
+                         default:
+                             userSelectionInt = 0;
+                             break;
+                     }
+
+                     double afterExercise = beforeExercise + userSelection;
+
+
+                     calculation.setText(afterExercise + "Litres");
+                 }
+            }
+        });
 
         return view;
     }
