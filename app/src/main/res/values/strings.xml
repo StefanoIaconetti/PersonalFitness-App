@@ -44,6 +44,19 @@
     <string name="quoteFive">Rougly 70% of weight loss starts with your diet!</string>
     <string name="quoteSix">Try exercising a little everyday. A simple 30 jumping jacks could suffice and make a huge difference</string>
 
+    <!--Water intake calculator texts -->
+    <string name="oftenExercise">How often do you exercise?</string>
+    <string name="waterIntakeTitle">Default title</string>
+
+    <!-- String array to hold information for the waater intake calculator-->
+    <string-array name="exerciseStats">
+       <item>No exercise</item>
+        <item>Not much exercise</item>
+        <item>A little bit of walking</item>
+        <item>Working out for at least 30 minutes</item>
+        <item>Casual 30 minute jog/run</item>
+        <item>Intense training</item>
+    </string-array>
 
 
     <!-- Page titles -->

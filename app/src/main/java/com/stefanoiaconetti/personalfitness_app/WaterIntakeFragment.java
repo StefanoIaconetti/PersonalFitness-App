@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 /**
@@ -64,7 +66,25 @@ public class WaterIntakeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_water_intake, container, false);
+        View view = inflater.inflate(R.layout.fragment_water_intake, container, false);
+
+        //Spinner being called
+        Spinner spinner = (Spinner) view.findViewById(R.id.waterIntakeSpinner);
+        //String exerciseStats that is in the strings.xml is being called
+        String[] exerArray = getResources().getStringArray(R.array.exerciseStats);
+        //Adapter for the spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.support_simple_spinner_dropdown_item, exerArray);
+
+        //Layout for spinner
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //Adding adapter to the spinner
+        spinner.setAdapter(adapter);
+
+
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
