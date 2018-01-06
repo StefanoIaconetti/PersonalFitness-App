@@ -90,7 +90,7 @@ public class BMIFragment extends Fragment {
                 String checkHeight = height.getText().toString();
 
                 result.setText("");
-                
+
                 if ((checkWeight.isEmpty()) && (checkHeight.isEmpty())) {
                     result.setText("You have not entered a weight or height");
                     weight.setHintTextColor(Color.RED);
