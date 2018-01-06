@@ -1,6 +1,7 @@
 package com.stefanoiaconetti.personalfitness_app;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -81,27 +82,44 @@ public class BMIFragment extends Fragment {
         result = (TextView) view.findViewById(R.id.BMIResult);
         calculateBMI = (Button) view.findViewById(R.id.calculateBMI);
 
+
         calculateBMI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String checkWeight = weight.getText().toString();
+                String checkHeight = height.getText().toString();
+
                 result.setText("");
+                
+                if ((checkWeight.isEmpty()) && (checkHeight.isEmpty())) {
+                    result.setText("You have not entered a weight or height");
+                    weight.setHintTextColor(Color.RED);
+                    height.setHintTextColor(Color.RED);
+                }else if (checkWeight.isEmpty()) {
+                    result.setText("You have not entered a weight");
+                    weight.setHintTextColor(Color.RED);
+                } else if (checkHeight.isEmpty()) {
+                    result.setText("You have not entered a height");
+                    height.setHintTextColor(Color.RED);
+                } else{
 
-               double heightValue = Double.parseDouble(height.getText().toString());
-               double weightValue = Double.parseDouble(weight.getText().toString());
+                double heightValue = Double.parseDouble(height.getText().toString());
+                double weightValue = Double.parseDouble(weight.getText().toString());
 
-               double feet = Math.floor(heightValue);
+                double feet = Math.floor(heightValue);
 
-               double inches = Math.round((heightValue - feet) * 10);
-               double convertedHeightValue = (feet * 12) + inches;
+                double inches = Math.round((heightValue - feet) * 10);
+                double convertedHeightValue = (feet * 12) + inches;
 
-               convertedHeightValue = convertedHeightValue * convertedHeightValue;
+                convertedHeightValue = convertedHeightValue * convertedHeightValue;
 
-               DecimalFormat decimalPlace = new DecimalFormat("##.#");
+                DecimalFormat decimalPlace = new DecimalFormat("0.0'0'");
 
-               double BMI = (weightValue / convertedHeightValue) * 703;
-//               BMI = decimalPlace.format(BMI);
+                double BMI = (weightValue / convertedHeightValue) * 703;
 
-               result.setText(BMI + "");
+                String bodyMass = decimalPlace.format(BMI) + "%";
+                result.setText(bodyMass);
+            }
             }
         });
 
