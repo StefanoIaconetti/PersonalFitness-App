@@ -49,6 +49,12 @@
     <string name="waterIntakeTitle">Default title</string>
     <string name="waterIntakeBtn">Lets find out!</string>
 
+    <!-- Schedule texts-->
+    <string name="schedBtnText">Booking time!</string>
+    <string name="schedTitle">Appointment with Burning Barbell!</string>
+    <string name="schedLocation">1233 Lift Road</string>
+    <string name="schedDesc">Sit down with the Burning Barbell to discuss payments and my future!</string>
+
     <!-- String array to hold information for the waater intake calculator-->
     <string-array name="exerciseStats">
        <item>No exercise</item>
