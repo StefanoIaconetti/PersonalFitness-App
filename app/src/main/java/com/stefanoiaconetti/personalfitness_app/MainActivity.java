@@ -3,7 +3,6 @@ package com.stefanoiaconetti.personalfitness_app;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -24,7 +23,8 @@ public class MainActivity extends AppCompatActivity
         ContactFragment.OnFragmentInteractionListener,
         WaterIntakeFragment.OnFragmentInteractionListener,
         WorkoutFragment.OnFragmentInteractionListener,
-        ScheduleFragment.OnFragmentInteractionListener{
+        ScheduleFragment.OnFragmentInteractionListener,
+        CalorieLogFragment.OnFragmentInteractionListener{
 
     FragmentManager fm = getSupportFragmentManager();
     //FragmentManager fm = getSupportFragmentManager();
@@ -124,6 +124,11 @@ public class MainActivity extends AppCompatActivity
             tran.commit();
         }else if (id == R.id.nav_contact) {
             tran.replace(R.id.content, new ContactFragment(), "Contact");
+            tran.addToBackStack(null);
+            tran.commit();
+        }
+        else if (id == R.id.nav_calorie) {
+            tran.replace(R.id.content, new CalorieLogFragment(), "Calorie");
             tran.addToBackStack(null);
             tran.commit();
         }
