@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/height_input"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
 
     <EditText
         android:id="@+id/weight"
@@ -20,25 +21,29 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/weight_input"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
 
     <TextView
         android:id="@+id/BMIResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
 
     <Button
         android:id="@+id/calculateBMI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/BMI_button" />
+        android:text="@string/BMI_button"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
 
     <TextView
         android:id="@+id/BMIInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
         android:text="@string/bmi_info"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textSize="20sp" />
 </LinearLayout>

@@ -103,17 +103,21 @@ public class BMIFragment extends Fragment {
                     height.setHintTextColor(Color.RED);
                 } else{
 
+                    //Grab the values entered into the number inputs
                 double heightValue = Double.parseDouble(height.getText().toString());
                 double weightValue = Double.parseDouble(weight.getText().toString());
 
+                //Create a variable that will hold the number of feet entered for the height
                 double feet = Math.floor(heightValue);
 
+                //Convert the height entered into inches
                 double inches = Math.round((heightValue - feet) * 10);
                 double convertedHeightValue = (feet * 12) + inches;
 
+                //Squaring the converted height value
                 convertedHeightValue = convertedHeightValue * convertedHeightValue;
 
-                DecimalFormat decimalPlace = new DecimalFormat("0.0'0'");
+                DecimalFormat decimalPlace = new DecimalFormat("0.0");
 
                 double BMI = (weightValue / convertedHeightValue) * 703;
 

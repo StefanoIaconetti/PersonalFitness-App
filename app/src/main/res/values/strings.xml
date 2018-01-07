@@ -32,7 +32,7 @@
     <!-- Calculator input hints -->
     <string name="height_input">Your height (feet)</string>
     <string name="weight_input">Your weight (lbs)</string>
-    <string name="age_input">Your age (yrs)</string>
+    <string name="age_input">Your age (years)</string>
 
     <!-- Contact Fragment buttons -->
     <string name="facebook_button">Facebook</string>
