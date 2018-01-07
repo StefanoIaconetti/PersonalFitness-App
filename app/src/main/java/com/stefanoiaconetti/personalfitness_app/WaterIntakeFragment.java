@@ -96,7 +96,7 @@ public class WaterIntakeFragment extends Fragment {
         spinner.setAdapter(adapter);
 
 
-        //Button being popoulated
+        //Button being populated
          findOut = (Button) view.findViewById(R.id.findoutBtn);
 
         //Weight edit text being populated
@@ -156,7 +156,7 @@ public class WaterIntakeFragment extends Fragment {
 
                             DecimalFormat decimalPlace = new DecimalFormat("0.0'0'");
 
-                            String finalCalc = decimalPlace.format(afterExercise) + "Litres";
+                            String finalCalc = decimalPlace.format(afterExercise) + " Litres";
 
                             calculation.setText(finalCalc);
                         }

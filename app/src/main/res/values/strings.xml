@@ -54,7 +54,7 @@
 
     <!--Water intake calculator texts -->
     <string name="oftenExercise">How often do you exercise?</string>
-    <string name="waterIntakeTitle">Lets check your reccomended water intake!</string>
+    <string name="waterIntakeTitle">Calculate your recommended water intake</string>
     <string name="waterIntakeBtn">Lets find out!</string>
 
     <!-- Schedule texts-->
