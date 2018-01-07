@@ -6,6 +6,17 @@
     tools:context="com.stefanoiaconetti.personalfitness_app.BMIFragment">
 
 
+    <TextView
+        android:id="@+id/BMITitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bmi_title"
+        android:textAlignment="center"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/title_size"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
+
     <EditText
         android:id="@+id/height"
         android:layout_width="match_parent"
