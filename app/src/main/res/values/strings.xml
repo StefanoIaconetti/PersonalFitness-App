@@ -34,6 +34,11 @@
     <string name="weight_input">Your weight (lbs)</string>
     <string name="age_input">Your age (yrs)</string>
 
+    <!-- Contact Fragment buttons -->
+    <string name="facebook_button">Facebook</string>
+    <string name="website_button">burningbarbell.com</string>
+    <string name="add_contact">Add our number!</string>
+
     <!--BMI info -->
     <string name="bmi_info">BMI Categories:\nUnderweight = 18.5 or lower\nHealthy weight = 18.5–24.9\nOverweight = 25–29.9\nObese = 30 or greater</string>
 

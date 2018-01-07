@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,12 +70,14 @@ public class ContactFragment extends Fragment {
 
         Button emailButton = (Button) view.findViewById(R.id.emailButton);
         Button callButton = (Button) view.findViewById(R.id.callButton);
+        Button facebookButton = (Button) view.findViewById(R.id.socialBtn);
+        Button addContact  = (Button) view.findViewById(R.id.addContact);
+        Button websiteButton  = (Button) view.findViewById(R.id.websiteBtn);
 
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                String[] emailAddress = {"@string/company_email_address"};
+             String[] emailAddress = {"@string/company_email_address"};
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
                 intent.putExtra(Intent.EXTRA_EMAIL, emailAddress);
@@ -89,6 +92,40 @@ public class ContactFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:" + 1234567889));
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+       facebookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Burning-Barbell-101181967356989/"));
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        addContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(Intent.ACTION_INSERT, ContactsContract.Contacts.CONTENT_URI);
+                intent.putExtra(ContactsContract.Intents.Insert.NAME, "Burning Barbell");
+                intent.putExtra(ContactsContract.Intents.Insert.EMAIL, "burningbarbell@gmail.com");
+                intent.putExtra(ContactsContract.Intents.Insert.PHONE, "1234567889");
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        websiteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://php.scweb.ca/~siaconetti968/AndroidProject/website.html"));
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 }

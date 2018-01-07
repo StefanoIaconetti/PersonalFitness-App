@@ -11,7 +11,7 @@
         android:id="@+id/contactText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/contact_title"
         android:textSize="@dimen/title_size" />
 
     <Button
@@ -35,13 +35,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:text="Button" />
+        android:text="@string/add_contact" />
 
     <TextView
         android:id="@+id/secondContactText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/contact_title2"
         android:textSize="@dimen/title_size" />
 
     <Button
@@ -49,14 +49,14 @@
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/facebook_button" />
 
     <Button
         android:id="@+id/websiteBtn"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/website_button" />
 
 
 </LinearLayout>
