@@ -22,11 +22,12 @@
 
     <!--Page titles -->
     <string name="bmi_calculator_title">BMI Calculator</string>
-    <string name="contact_title">Contact</string>
+    <string name="contact_title">Contact us!</string>
     <string name="home_title">Home</string>
     <string name="schedule_title">Schedule</string>
     <string name="water_intake_calculator_title">Water Intake Calculator</string>
     <string name="workouts_title">Workouts</string>
+    <string name="contact_title2">Or better yet check us out online!</string>
 
     <!-- Calculator input hints -->
     <string name="height_input">Your height (feet)</string>
