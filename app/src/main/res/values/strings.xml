@@ -27,6 +27,7 @@
     <string name="water_intake_calculator_title">Water Intake Calculator</string>
     <string name="workouts_title">Workouts</string>
     <string name="contact_title2">Or better yet check us out online!</string>
+    <string name="calorielog_title">Your calorie log</string>
 
     <!-- Calculator input hints -->
     <string name="height_input">Your height (feet)</string>

@@ -4,9 +4,13 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 
 /**
@@ -26,6 +30,7 @@ public class CalorieLogFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    public ArrayList<CalorieLog> calorieArray = new ArrayList<CalorieLog>();
 
     private OnFragmentInteractionListener mListener;
 
@@ -63,8 +68,18 @@ public class CalorieLogFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calorie_log, container, false);
+        View view =  inflater.inflate(R.layout.fragment_calorie_log, container, false);
+
+
+
+        RecyclerView recyclerView = view.findViewById(R.id.caloriesRecyclerView);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        CustomRecyclerViewAdapterCalories adapter = new CustomRecyclerViewAdapterCalories(calorieArray);
+        recyclerView.setAdapter(adapter);
+        return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
         CalorieLogFragment.OnFragmentInteractionListener{
 
     FragmentManager fm = getSupportFragmentManager();
-    //FragmentManager fm = getSupportFragmentManager();
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
             }
         });
 
