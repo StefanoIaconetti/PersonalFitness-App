@@ -38,6 +38,7 @@
     <string name="facebook_button">Facebook</string>
     <string name="website_button">burningbarbell.com</string>
     <string name="add_contact">Add our number!</string>
+    <string name="map_button">Find us on google maps!</string>
 
     <!--BMI info -->
     <string name="bmi_info">BMI Categories:\nUnderweight = 18.5 or lower\nHealthy weight = 18.5–24.9\nOverweight = 25–29.9\nObese = 30 or greater</string>
@@ -63,7 +64,7 @@
 
     <!-- String array to hold information for the waater intake calculator-->
     <string-array name="exerciseStats">
-       <item>No exercise</item>
+        <item>No exercise</item>
         <item>Not much exercise</item>
         <item>A little bit of walking</item>
         <item>Working out for at least 30 minutes</item>

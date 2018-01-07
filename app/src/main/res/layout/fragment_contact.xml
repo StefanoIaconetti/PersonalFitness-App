@@ -58,5 +58,12 @@
         android:layout_height="wrap_content"
         android:text="@string/website_button" />
 
+    <Button
+        android:id="@+id/mapButton"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/map_button" />
+
 
 </LinearLayout>

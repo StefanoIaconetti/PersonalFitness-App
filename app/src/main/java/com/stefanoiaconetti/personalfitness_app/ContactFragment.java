@@ -73,7 +73,9 @@ public class ContactFragment extends Fragment {
         Button facebookButton = (Button) view.findViewById(R.id.socialBtn);
         Button addContact  = (Button) view.findViewById(R.id.addContact);
         Button websiteButton  = (Button) view.findViewById(R.id.websiteBtn);
+        Button mapButton = (Button) view.findViewById(R.id.mapButton);
 
+        //Action so when the email button is pressed it opens up email
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,6 +89,7 @@ public class ContactFragment extends Fragment {
             }
         });
 
+        //Call button action so when its pressed it dials a number
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,7 +100,7 @@ public class ContactFragment extends Fragment {
                 }
             }
         });
-
+        //When pressed our facebook page opens in browser
        facebookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,7 +110,7 @@ public class ContactFragment extends Fragment {
                 }
             }
         });
-
+        //When pressed we are added as a contact
         addContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +124,7 @@ public class ContactFragment extends Fragment {
                 }
             }
         });
-
+        //When pressed they are linked to our website
         websiteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,6 +134,20 @@ public class ContactFragment extends Fragment {
                 }
             }
         });
+
+        //When pressed they put into google maps and shown a location
+       mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("google.streetview:cbll=42.421683,-82.662247");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+
 
         return view;
     }
