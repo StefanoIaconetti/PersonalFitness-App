@@ -30,7 +30,7 @@ public class CalorieLogFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    public ArrayList<CalorieLog> calorieArray = new ArrayList<CalorieLog>();
+    public static ArrayList<CalorieLog> calorieArray = new ArrayList<CalorieLog>();
 
     private OnFragmentInteractionListener mListener;
 
@@ -71,9 +71,7 @@ public class CalorieLogFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_calorie_log, container, false);
 
 
-
         RecyclerView recyclerView = view.findViewById(R.id.caloriesRecyclerView);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         CustomRecyclerViewAdapterCalories adapter = new CustomRecyclerViewAdapterCalories(calorieArray);
@@ -81,6 +79,8 @@ public class CalorieLogFragment extends Fragment {
         return view;
 
     }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

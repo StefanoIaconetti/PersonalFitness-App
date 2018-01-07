@@ -12,6 +12,7 @@ public class CalorieLog {
     public CalorieLog(){
 
     }
+
     public CalorieLog(String foodDrinkItem, String calories){
         this.foodDrinkItem = foodDrinkItem;
         this.calories = calories;

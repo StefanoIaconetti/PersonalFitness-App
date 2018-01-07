@@ -28,8 +28,6 @@ public class CustomRecyclerViewAdapterCalories extends RecyclerView.Adapter {
 
         @Override
         public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
-
-
             CalorieLog calories = myCalories.get(position);
 
             ((CustomViewHolder) holder).foodDrinkItem.setText(calories.getFoodDrinkItem());

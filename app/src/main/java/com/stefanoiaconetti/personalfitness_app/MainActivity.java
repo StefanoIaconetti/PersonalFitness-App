@@ -1,10 +1,12 @@
 package com.stefanoiaconetti.personalfitness_app;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+
+import java.util.ArrayList;
 
 //Implementing the onfragment interaction listeners
 public class MainActivity extends AppCompatActivity
@@ -27,8 +32,7 @@ public class MainActivity extends AppCompatActivity
         CalorieLogFragment.OnFragmentInteractionListener{
 
     FragmentManager fm = getSupportFragmentManager();
-    
-
+    final Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,26 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CalorieLogFragment.calorieArray.add(new CalorieLog("Hi", "Hi"));
+
+
+                AlertDialog.Builder alertBox = new AlertDialog.Builder(context);
+
+                alertBox.setTitle("Add your food and calories!");
+                EditText foodEdit = new EditText(context);
+                EditText calorieEdit = new EditText(context);
+                alertBox.setView(foodEdit);
+
+                alertBox.setView(calorieEdit);
+
+
+                alertBox.show();
+               // FragmentTransaction tran = fm.beginTransaction();
+
+
+                   // tran.replace(R.id.content, new CalorieLogFragment(), "Calorie Log");
+                  //  tran.addToBackStack(null);
+                   // tran.commit();
 
             }
         });
@@ -63,6 +87,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+
 
     @Override
     public void onBackPressed() {
