@@ -7,6 +7,13 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <TextView
+        android:id="@+id/contactText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_title"
+        android:textSize="@dimen/title_size" />
+
     <Button
         android:id="@+id/emailButton"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
@@ -20,7 +27,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:text="@string/call_button"/>
+        android:text="@string/call_button" />
+
+    <Button
+        android:id="@+id/addContact"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/add_contact" />
+
+    <TextView
+        android:id="@+id/secondContactText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_title2"
+        android:textSize="@dimen/title_size" />
+
+    <Button
+        android:id="@+id/socialBtn"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/facebook_button" />
+
+    <Button
+        android:id="@+id/websiteBtn"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/website_button" />
+
+    <Button
+        android:id="@+id/mapButton"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/map_button" />
 
 
 </LinearLayout>
