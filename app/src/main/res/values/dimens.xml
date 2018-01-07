@@ -8,7 +8,8 @@
 
     <!-- Text sizes -->
     <dimen name="title_size">25sp</dimen>
-    <dimen name="quote_size">20sp</dimen>
+    <dimen name="subtitle_size">22sp</dimen>
+    <dimen name="normal_text_size">20sp</dimen>
 
 
 </resources>

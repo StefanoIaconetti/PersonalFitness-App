@@ -41,7 +41,8 @@
     <string name="map_button">Find us on google maps!</string>
 
     <!--BMI info -->
-    <string name="bmi_info">BMI Categories:\nUnderweight = 18.5 or lower\nHealthy weight = 18.5–24.9\nOverweight = 25–29.9\nObese = 30 or greater</string>
+    <string name="bmi_info_title">BMI Categories:</string>
+    <string name="bmi_info">Underweight = 18.5 or lower\nHealthy weight = 18.5–24.9\nOverweight = 25–29.9\nObese = 30 or greater</string>
 
     <!--Quote of the day labels-->
     <string name="quoteOne">You can loose more fat by drinking lots of water, our personal water intake calculator can help!</string>
