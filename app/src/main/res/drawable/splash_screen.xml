@@ -6,7 +6,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/burning_barbell_logo" />
+            android:src="@mipmap/ic_personallogo" />
     </item>
 
 </layer-list>
