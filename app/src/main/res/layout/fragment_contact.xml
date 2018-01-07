@@ -12,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/contact_title"
+        android:textAlignment="center"
+        android:textColor="@color/primaryText"
         android:textSize="@dimen/title_size" />
 
     <Button
@@ -42,6 +44,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/contact_title2"
+        android:textAlignment="center"
+        android:textColor="@color/primaryText"
         android:textSize="@dimen/title_size" />
 
     <Button

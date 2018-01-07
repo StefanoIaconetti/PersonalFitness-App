@@ -7,7 +7,7 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="ScheduleTitle">Schedule your appointment today!</string>
+    <string name="ScheduleTitle">Schedule your appointment</string>
 
     <!--Contact information-->
     <string name="company_name">Burning Barbell</string>
@@ -58,7 +58,7 @@
     <string name="waterIntakeBtn">Lets find out!</string>
 
     <!-- Schedule texts-->
-    <string name="schedBtnText">Booking time!</string>
+    <string name="schedBtnText">Book now</string>
     <string name="schedTitle">Appointment with Burning Barbell!</string>
     <string name="schedLocation">1233 Lift Road</string>
     <string name="schedDesc">Sit down with the Burning Barbell to discuss payments and my future!</string>
