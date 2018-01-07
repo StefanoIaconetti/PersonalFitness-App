@@ -31,6 +31,7 @@ public class WaterIntakeFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     EditText weight;
+    Button findOut;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -96,7 +97,7 @@ public class WaterIntakeFragment extends Fragment {
 
 
         //Button being popoulated
-        Button findOut = (Button) view.findViewById(R.id.findoutBtn);
+         findOut = (Button) view.findViewById(R.id.findoutBtn);
 
         //Weight edit text being populated
         weight = (EditText) view.findViewById(R.id.weightEdit);
@@ -107,7 +108,6 @@ public class WaterIntakeFragment extends Fragment {
             findOut.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     String check = weight.getText().toString();
 
                     if (check.isEmpty()) {
