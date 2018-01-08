@@ -16,7 +16,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -55,17 +58,30 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 CalorieLogFragment.calorieArray.add(new CalorieLog("Hi", "Hi"));
-
+                LinearLayout layout = new LinearLayout(context);
+                layout.setOrientation(LinearLayout.VERTICAL);
 
                 AlertDialog.Builder alertBox = new AlertDialog.Builder(context);
 
                 alertBox.setTitle("Add your food and calories!");
                 EditText foodEdit = new EditText(context);
                 EditText calorieEdit = new EditText(context);
-                alertBox.setView(foodEdit);
+                TextView foodText = new TextView(context);
+                TextView calorieText = new TextView(context);
+                Button go = new Button(context);
+                Button cancel = new Button(context);
 
-                alertBox.setView(calorieEdit);
+                foodText.setText("What food did you eat?");
+                calorieText.setText("How many calories did it have?");
+                go.setText("Go");
+                cancel.setText("Cancel");
 
+                layout.addView(foodText);
+                layout.addView(foodEdit);
+                layout.addView(calorieText);
+                layout.addView(calorieEdit);
+
+                alertBox.setView(layout);
 
                 alertBox.show();
                // FragmentTransaction tran = fm.beginTransaction();
