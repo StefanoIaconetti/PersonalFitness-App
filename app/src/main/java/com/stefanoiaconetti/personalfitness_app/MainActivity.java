@@ -1,12 +1,14 @@
 package com.stefanoiaconetti.personalfitness_app;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
+import android.text.InputType;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -57,40 +59,61 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CalorieLogFragment.calorieArray.add(new CalorieLog("Hi", "Hi"));
+                //Layout so i can have multiple texts/ editBoxes
                 LinearLayout layout = new LinearLayout(context);
                 layout.setOrientation(LinearLayout.VERTICAL);
 
-                AlertDialog.Builder alertBox = new AlertDialog.Builder(context);
+                //AlertDialog being built
+                final AlertDialog.Builder alertBox = new AlertDialog.Builder(context);
+                alertBox.setTitle(R.string.what_ate);
 
-                alertBox.setTitle("Add your food and calories!");
-                EditText foodEdit = new EditText(context);
-                EditText calorieEdit = new EditText(context);
+                //Edittexts and textiews
+                final EditText foodEdit = new EditText(context);
+                final EditText calorieEdit = new EditText(context);
                 TextView foodText = new TextView(context);
                 TextView calorieText = new TextView(context);
-                Button go = new Button(context);
-                Button cancel = new Button(context);
 
-                foodText.setText("What food did you eat?");
-                calorieText.setText("How many calories did it have?");
-                go.setText("Go");
-                cancel.setText("Cancel");
+                //Padding and adding texts to the textviews
+                calorieText.setPadding(15, 0, 0, 0);
+                foodText.setPadding(15, 0, 0, 0);
+                calorieEdit.setRawInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+                foodText.setText(R.string.add_food);
+                calorieText.setText(R.string.calorie_many);
 
+                //Adding them into my linear layout
                 layout.addView(foodText);
                 layout.addView(foodEdit);
                 layout.addView(calorieText);
                 layout.addView(calorieEdit);
 
+                //Populating the alertbox
                 alertBox.setView(layout);
 
+                //What happens when the add button is pressed
+            alertBox.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //Users input is now placed into the recycler array
+                        String food = foodEdit.getText() + "";
+                        String calories = calorieEdit.getText() + "";
+                        CalorieLogFragment.calorieArray.add(new CalorieLog(food, calories + " calories"));
+
+                        //You are either sent to the fragment or it refreshed
+                        FragmentTransaction tran = fm.beginTransaction();
+                         tran.replace(R.id.content, new CalorieLogFragment(), "Calorie Log");
+                         tran.addToBackStack(null);
+                         tran.commit();
+                    }
+                });
+            //alertbox is dismissed if button is pressed
+                alertBox.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
                 alertBox.show();
-               // FragmentTransaction tran = fm.beginTransaction();
-
-
-                   // tran.replace(R.id.content, new CalorieLogFragment(), "Calorie Log");
-                  //  tran.addToBackStack(null);
-                   // tran.commit();
-
             }
         });
 

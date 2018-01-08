@@ -29,6 +29,11 @@
     <string name="contact_title2">Or better yet check us out online!</string>
     <string name="calorielog_title">Your calorie log</string>
 
+    <!-- Fab text -->
+    <string name="what_ate">Add your food and calories!</string>
+    <string name="add_food">What food did you eat?</string>
+    <string name="calorie_many">How many calories did it have?</string>
+
     <!-- Calculator input hints -->
     <string name="height_input">Your height (feet)</string>
     <string name="weight_input">Your weight (lbs)</string>
