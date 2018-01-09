@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity
         WaterIntakeFragment.OnFragmentInteractionListener,
         WorkoutFragment.OnFragmentInteractionListener,
         ScheduleFragment.OnFragmentInteractionListener,
-        CalorieLogFragment.OnFragmentInteractionListener{
+        CalorieLogFragment.OnFragmentInteractionListener,
+        WorkoutViewPager.OnFragmentInteractionListener{
 
     FragmentManager fm = getSupportFragmentManager();
     final Context context = this;
@@ -181,7 +182,7 @@ public class MainActivity extends AppCompatActivity
             tran.addToBackStack(null);
             tran.commit();
         } else if (id == R.id.nav_Workouts) {
-            tran.replace(R.id.content, new WorkoutFragment(), "Workouts");
+            tran.replace(R.id.content, new WorkoutViewPager(), "Workouts");
             tran.addToBackStack(null);
             tran.commit();
         } else if (id == R.id.nav_schedule) {

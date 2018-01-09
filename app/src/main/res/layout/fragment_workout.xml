@@ -10,18 +10,11 @@
     <TextView
         android:id="@+id/workoutTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/workoutDesc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content" />
 
-    <ImageView
-        android:id="@+id/workoutImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/arrow_down_float" />
 </LinearLayout>

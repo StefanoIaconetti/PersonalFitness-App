@@ -29,7 +29,6 @@ public class WorkoutViewPager extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private CustomAdapter adapter;
     private OnFragmentInteractionListener mListener;
 
     public WorkoutViewPager() {
@@ -69,8 +68,8 @@ public class WorkoutViewPager extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_workout_view_pager, container, false);
 
-        adapter = new CustomAdapter(getActivity().getSupportFragmentManager());
-        ViewPager viewpager = (ViewPager) view.findViewById(R.id.viewPagerWorkouts);
+        CustomAdapter adapter = new CustomAdapter(getChildFragmentManager());
+        ViewPager viewpager = (ViewPager) view.findViewById(R.id.viewPagerWorkoutst);
         viewpager.setAdapter(adapter);
 
         return view;
@@ -86,11 +85,10 @@ public class WorkoutViewPager extends Fragment {
 
         public Fragment getItem(int position){
             switch(position){
-                case 0: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
-                case 1: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
-                case 2: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
-                case 3: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
-                case 4: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
+                case 0: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "yaaaaaaaaaaaahoo");
+                case 1: return WorkoutFragment.newInstance("When naminshould famel case", "");
+                case 3: return WorkoutFragment.newInstance("When naming adfu should always use camel case", "");
+                case 4: return WorkoutFragment.newInstance("When naming a variaauld always use camel case", "");
                 default: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
             }
         }
