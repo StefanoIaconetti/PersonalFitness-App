@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +64,7 @@ public class WorkoutFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+         }
     }
 
     @Override
@@ -70,32 +73,15 @@ public class WorkoutFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_workout, container, false);
 
-        ArrayList<WorkoutItem> workout = new ArrayList<WorkoutItem>();
+        TextView workoutDesc = (TextView) view.findViewById(R.id.workoutDesc);
+        TextView workoutTitle = (TextView) view.findViewById(R.id.workoutTitle);
+        if(mParam1 != null || mParam2 != null){
+            workoutDesc.setText(mParam1);
+            workoutTitle.setText(mParam2);
+        }
 
-        workout.add(new WorkoutItem("Step 1", "Sit down"));
-        workout.add(new WorkoutItem("Step 2", "Stand up"));
-        RecyclerView recyclerView = view.findViewById(R.id.armsRecyclerView);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        CustomRecyclerViewAdapter adapter = new CustomRecyclerViewAdapter(workout);
-        recyclerView.setAdapter(adapter);
         return view;
     }
-
-   // public Fragment getItem(int position){
-     //   ArrayList<WorkoutItem> workout = new ArrayList<WorkoutItem>();
-     //   WorkoutItem workout1 =  new WorkoutItem("Step 1", "Sit down");
-      //  switch(position){
-        //    case 0: return WorkoutViewPager.newInstance(workout1, "image");
-       // }
-   // }
-
-  //  public int getCount(){
-    //    return 5;
-   // }
-
-//}
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

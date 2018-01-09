@@ -1,16 +1,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.stefanoiaconetti.personalfitness_app.WorkoutFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/armsRecyclerView"
+
+    <TextView
+        android:id="@+id/workoutTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
+    <TextView
+        android:id="@+id/workoutDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
-
+    <ImageView
+        android:id="@+id/workoutImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/arrow_down_float" />
 </LinearLayout>

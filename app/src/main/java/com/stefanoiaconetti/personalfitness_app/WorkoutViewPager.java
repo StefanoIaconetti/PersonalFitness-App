@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,10 +68,36 @@ public class WorkoutViewPager extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_workout_view_pager, container, false);
+
         adapter = new CustomAdapter(getActivity().getSupportFragmentManager());
-        viewpager = (ViewPager) view.findViewById(R.id.viewPagerWorkouts);
+        ViewPager viewpager = (ViewPager) view.findViewById(R.id.viewPagerWorkouts);
         viewpager.setAdapter(adapter);
+
         return view;
+
+    }
+
+
+    public class CustomAdapter extends FragmentPagerAdapter {
+
+        public CustomAdapter(FragmentManager fm){
+            super(fm);
+        }
+
+        public Fragment getItem(int position){
+            switch(position){
+                case 0: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
+                case 1: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
+                case 2: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
+                case 3: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
+                case 4: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
+                default: return WorkoutFragment.newInstance("When naming a variable you should always use camel case", "");
+            }
+        }
+
+        public int getCount(){
+            return 5;
+        }
 
     }
 
