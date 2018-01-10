@@ -69,6 +69,12 @@
     <string name="schedLocation">1233 Lift Road</string>
     <string name="schedDesc">Sit down with the Burning Barbell to discuss payments and my future!</string>
 
+    <!-- Settings texts-->
+    <string name="metricText">Switch to Metric</string>
+    <string name="imperialText">Switch to Imperial</string>
+    <string name="enterNameTxt">Enter your name</string>
+    <string name="calorieShow">Show Calories</string>
+
     <!-- String array to hold information for the waater intake calculator-->
     <string-array name="exerciseStats">
         <item>No exercise</item>
