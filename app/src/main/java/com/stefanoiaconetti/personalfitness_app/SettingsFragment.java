@@ -28,6 +28,8 @@ public class SettingsFragment extends Fragment {
     public static boolean isMetric = false;
     public static String name = "";
     public static boolean showCals = false;
+    public static boolean beforeMetric = false;
+    public static boolean hasName = false;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -64,6 +66,7 @@ public class SettingsFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -73,23 +76,55 @@ public class SettingsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
         final Button btnMetricImp = (Button) view.findViewById(R.id.btnMetricImp);
-        EditText nameEditText = (EditText) view.findViewById(R.id.nameEditText);
+        final EditText nameEditText = (EditText) view.findViewById(R.id.nameEditText);
         Switch showCaloriesSwitch = (Switch) view.findViewById(R.id.showCaloriesSwitch);
+        Button btnConfirm = (Button) view.findViewById(R.id.confirmBtn);
+
+        if(nameEditText.getText() != null){
+            nameEditText.setText(name);
+        }else{
+            hasName = false;
+        }
+
+        if(beforeMetric){
+            btnMetricImp.setText(R.string.metricText);
+        }else{
+            btnMetricImp.setText(R.string.imperialText);
+        }
 
         btnMetricImp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isMetric == false){
+                if(beforeMetric){
                     btnMetricImp.setText(R.string.imperialText);
-                    isMetric = true;
-                }else if (isMetric == true){
-                    isMetric = false;
+                    beforeMetric = true;
+                }else{
+                    beforeMetric = false;
                     btnMetricImp.setText(R.string.metricText);
                 }
             }
         });
 
 
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(beforeMetric == false){
+                    isMetric = false;
+                }else{
+                    isMetric = true;
+                }
+
+                if(nameEditText.getText() != null){
+                    hasName = true;
+                    name = nameEditText.getText() + "";
+                }else{
+                    hasName = false;
+                }
+
+            }
+        });
         return view;
     }
 

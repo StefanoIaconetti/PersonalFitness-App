@@ -74,6 +74,7 @@
     <string name="imperialText">Switch to Imperial</string>
     <string name="enterNameTxt">Enter your name</string>
     <string name="calorieShow">Show Calories</string>
+    <string name="btnConfirm">Confirm</string>
 
     <!-- String array to hold information for the waater intake calculator-->
     <string-array name="exerciseStats">

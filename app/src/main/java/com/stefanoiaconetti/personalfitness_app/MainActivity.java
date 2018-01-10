@@ -24,6 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 //Implementing the onfragment interaction listeners
 public class MainActivity extends AppCompatActivity
@@ -160,6 +161,7 @@ public class MainActivity extends AppCompatActivity
             tran.replace(R.id.content, new SettingsFragment(), "Settings");
             tran.addToBackStack(null);
             tran.commit();
+            SettingsFragment.beforeMetric = SettingsFragment.isMetric;
         }
 
         return super.onOptionsItemSelected(item);
