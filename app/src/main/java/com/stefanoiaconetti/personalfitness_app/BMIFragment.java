@@ -82,6 +82,11 @@ public class BMIFragment extends Fragment {
         result = (TextView) view.findViewById(R.id.BMIResult);
         calculateBMI = (Button) view.findViewById(R.id.calculateBMI);
 
+        if(SettingsFragment.isMetric == "Metric"){
+            height.setHint(R.string.heightcm_input);
+        }else{
+            height.setHint(R.string.height_input);
+        }
 
         calculateBMI.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,23 +108,35 @@ public class BMIFragment extends Fragment {
                     height.setHintTextColor(Color.RED);
                 } else{
 
-                    //Grab the values entered into the number inputs
+
+                //Grab the values entered into the number inputs
                 double heightValue = Double.parseDouble(height.getText().toString());
                 double weightValue = Double.parseDouble(weight.getText().toString());
 
                 //Create a variable that will hold the number of feet entered for the height
                 double feet = Math.floor(heightValue);
 
+
+
                 //Convert the height entered into inches
                 double inches = Math.round((heightValue - feet) * 10);
+
                 double convertedHeightValue = (feet * 12) + inches;
+
+                    if(SettingsFragment.isMetric == "Metric"){
+                        convertedHeightValue = Math.round(feet / 2.54);
+                    }
 
                 //Squaring the converted height value
                 convertedHeightValue = convertedHeightValue * convertedHeightValue;
 
+
+
                 DecimalFormat decimalPlace = new DecimalFormat("0.0");
 
                 double BMI = (weightValue / convertedHeightValue) * 703;
+
+
 
                 String bodyMass = decimalPlace.format(BMI) + "%";
                 result.setText(bodyMass);

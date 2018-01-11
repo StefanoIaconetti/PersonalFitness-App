@@ -36,6 +36,7 @@
 
     <!-- Calculator input hints -->
     <string name="height_input">Your height (feet)</string>
+    <string name="heightcm_input">Your height (cm)</string>
     <string name="weight_input">Your weight (lbs)</string>
     <string name="age_input">Your age (years)</string>
 
