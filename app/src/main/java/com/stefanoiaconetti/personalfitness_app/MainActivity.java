@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -173,6 +174,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         FragmentTransaction tran = fm.beginTransaction();
+        tran.setCustomAnimations(R.anim.slide_in, R.anim.slide_out);
 
         if (id == R.id.nav_home) {
             tran.replace(R.id.content, new HomeFragment(), "Home");
@@ -182,6 +184,7 @@ public class MainActivity extends AppCompatActivity
             tran.replace(R.id.content, new BMIFragment(), "BMI");
             tran.addToBackStack(null);
             tran.commit();
+
         } else if (id == R.id.nav_Water) {
             tran.replace(R.id.content, new WaterIntakeFragment(), "WaterIntake");
             tran.addToBackStack(null);
