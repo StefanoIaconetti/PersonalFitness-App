@@ -123,7 +123,9 @@ public class WaterIntakeFragment extends Fragment {
                             //Calculations will be your weight multiplyed by 0.02841308(.5 of a oz in litres)
                             double beforeExercise = weightValue * 0.5;
 
-                            beforeExercise = beforeExercise * 0.02841308;
+                            if (SettingsFragment.isMetric == "Metric"){
+                                beforeExercise = beforeExercise * 0.02841308;
+                            }
 
                             int userSelection = spinner.getSelectedItemPosition();
                             double userSelectionInt;
@@ -155,8 +157,12 @@ public class WaterIntakeFragment extends Fragment {
                             double afterExercise = beforeExercise + userSelection;
 
                             DecimalFormat decimalPlace = new DecimalFormat("0.0'0'");
-
-                            String finalCalc = decimalPlace.format(afterExercise) + " Litres";
+                            String finalCalc = "";
+                            if (SettingsFragment.isMetric == "Metric"){
+                                finalCalc = decimalPlace.format(afterExercise) + " litres";
+                            }else{
+                                finalCalc = decimalPlace.format(afterExercise) + " ounces";
+                            }
 
                             calculation.setText(finalCalc);
                         }

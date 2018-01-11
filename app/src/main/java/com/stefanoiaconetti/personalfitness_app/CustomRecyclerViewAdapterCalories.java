@@ -32,11 +32,13 @@ public class CustomRecyclerViewAdapterCalories extends RecyclerView.Adapter {
 
             ((CustomViewHolder) holder).foodDrinkItem.setText(calories.getFoodDrinkItem());
             ((CustomViewHolder) holder).calories.setText(calories.getCalories());
-
-
+            
 
         }
 
+        public void delete(int position){
+            myCalories.remove(position);
+        }
         @Override
         public int getItemCount() {
             if (myCalories != null) {
