@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,7 @@ public class CalorieLogFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     public static ArrayList<CalorieLog> calorieArray = new ArrayList<CalorieLog>();
+    public static int totalCalorie;
 
     private OnFragmentInteractionListener mListener;
 
@@ -69,14 +71,17 @@ public class CalorieLogFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_calorie_log, container, false);
+        TextView totalCals = (TextView) view.findViewById(R.id.textTotalCals);
 
-
-        RecyclerView recyclerView = view.findViewById(R.id.caloriesRecyclerView);
+        final RecyclerView recyclerView = view.findViewById(R.id.caloriesRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        CustomRecyclerViewAdapterCalories adapter = new CustomRecyclerViewAdapterCalories(calorieArray);
+        final CustomRecyclerViewAdapterCalories adapter = new CustomRecyclerViewAdapterCalories(calorieArray);
         recyclerView.setAdapter(adapter);
-        return view;
+
+         totalCals.setText(totalCalorie + " total calories");
+
+    return view;
 
     }
 
