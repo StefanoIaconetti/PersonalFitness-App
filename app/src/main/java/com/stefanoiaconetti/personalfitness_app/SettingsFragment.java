@@ -25,10 +25,10 @@ public class SettingsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    public static boolean isMetric = false;
+    public static String isMetric = "Metric";
     public static String name = "";
     public static boolean showCals = false;
-    public static boolean beforeMetric = false;
+    public static String beforeMetric = "Metric";
     public static boolean hasName = false;
 
     // TODO: Rename and change types of parameters
@@ -67,6 +67,9 @@ public class SettingsFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+        //Makes isMetric beforeMetric incase the string is empty
+        isMetric = beforeMetric;
+
     }
 
     @Override
@@ -77,7 +80,7 @@ public class SettingsFragment extends Fragment {
 
         final Button btnMetricImp = (Button) view.findViewById(R.id.btnMetricImp);
         final EditText nameEditText = (EditText) view.findViewById(R.id.nameEditText);
-        Switch showCaloriesSwitch = (Switch) view.findViewById(R.id.showCaloriesSwitch);
+        final Switch showCaloriesSwitch = (Switch) view.findViewById(R.id.showCaloriesSwitch);
         Button btnConfirm = (Button) view.findViewById(R.id.confirmBtn);
 
         if(nameEditText.getText() != null){
@@ -86,21 +89,28 @@ public class SettingsFragment extends Fragment {
             hasName = false;
         }
 
-        if(beforeMetric){
-            btnMetricImp.setText(R.string.metricText);
-        }else{
+        if (isMetric == "Metric"){
+             btnMetricImp.setText(R.string.metricText);
+             beforeMetric = "Metric";
+             isMetric = "";
+        }else if(isMetric == "Imperial") {
             btnMetricImp.setText(R.string.imperialText);
+            beforeMetric = "Imperial";
+            isMetric = "";
         }
+
 
         btnMetricImp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(beforeMetric){
-                    btnMetricImp.setText(R.string.imperialText);
-                    beforeMetric = true;
-                }else{
-                    beforeMetric = false;
+                if(beforeMetric == "Imperial"){
                     btnMetricImp.setText(R.string.metricText);
+                    beforeMetric = "Metric";
+                    isMetric = "Metric";
+                }else if (beforeMetric == "Metric"){
+                    btnMetricImp.setText(R.string.imperialText);
+                    beforeMetric = "Imperial";
+                    isMetric = "Imperial";
                 }
             }
         });
@@ -110,10 +120,10 @@ public class SettingsFragment extends Fragment {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(beforeMetric == false){
-                    isMetric = false;
+                if(btnMetricImp.getText().equals(R.string.imperialText)){
+                    isMetric = "Imperial";
                 }else{
-                    isMetric = true;
+                    isMetric = "Metric";
                 }
 
                 if(nameEditText.getText() != null){
@@ -123,6 +133,11 @@ public class SettingsFragment extends Fragment {
                     hasName = false;
                 }
 
+                if(showCaloriesSwitch.isActivated()){
+                    showCals = true;
+                }else{
+                    showCals = false;
+                }
             }
         });
         return view;

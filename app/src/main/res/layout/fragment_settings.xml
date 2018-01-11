@@ -9,8 +9,7 @@
     <Button
         android:id="@+id/btnMetricImp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/metricText" />
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/nameEditText"

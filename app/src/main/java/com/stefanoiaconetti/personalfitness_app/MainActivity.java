@@ -161,7 +161,6 @@ public class MainActivity extends AppCompatActivity
             tran.replace(R.id.content, new SettingsFragment(), "Settings");
             tran.addToBackStack(null);
             tran.commit();
-            SettingsFragment.beforeMetric = SettingsFragment.isMetric;
         }
 
         return super.onOptionsItemSelected(item);
