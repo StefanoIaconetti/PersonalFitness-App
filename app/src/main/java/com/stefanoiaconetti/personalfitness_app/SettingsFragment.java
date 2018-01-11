@@ -27,9 +27,9 @@ public class SettingsFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     public static String isMetric = "Metric";
     public static String name = "";
+    public static boolean hasName = false;
     public static boolean showCals = false;
     public static String beforeMetric = "Metric";
-    public static boolean hasName = false;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -85,8 +85,6 @@ public class SettingsFragment extends Fragment {
 
         if(nameEditText.getText() != null){
             nameEditText.setText(name);
-        }else{
-            hasName = false;
         }
 
         if (isMetric == "Metric"){
@@ -97,6 +95,10 @@ public class SettingsFragment extends Fragment {
             btnMetricImp.setText(R.string.imperialText);
             beforeMetric = "Imperial";
             isMetric = "";
+        }
+
+        if(showCals == true){
+            showCaloriesSwitch.setChecked(true);
         }
 
 
@@ -126,14 +128,14 @@ public class SettingsFragment extends Fragment {
                     isMetric = "Metric";
                 }
 
-                if(nameEditText.getText() != null){
-                    hasName = true;
-                    name = nameEditText.getText() + "";
-                }else{
+                if(nameEditText.getText().equals("")){
                     hasName = false;
+                }else{
+                    name = nameEditText.getText() + "";
+                    hasName = true;
                 }
 
-                if(showCaloriesSwitch.isActivated()){
+                if(showCaloriesSwitch.isChecked()){
                     showCals = true;
                 }else{
                     showCals = false;
