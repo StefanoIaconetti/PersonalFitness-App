@@ -101,11 +101,12 @@ public class MainActivity extends AppCompatActivity
                         //Users input is now placed into the recycler array
                         String food = foodEdit.getText() + "";
                         String calories = calorieEdit.getText() + "";
+                        int totalList = 0;
 
                         if(food.equals("") || calories.equals("")){
 
                         }else {
-                            CalorieLogFragment.calorieArray.add(new CalorieLog(food, calories + " calories"));
+                            CalorieLogFragment.calorieArray.add(new CalorieLog(totalList + " " + food, calories + " calories"));
                             //You are either sent to the fragment or it refreshed
                             FragmentTransaction tran = fm.beginTransaction();
                             tran.replace(R.id.content, new CalorieLogFragment(), "Calorie Log");

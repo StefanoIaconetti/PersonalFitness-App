@@ -73,14 +73,15 @@ public class CalorieLogFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_calorie_log, container, false);
         TextView totalCals = (TextView) view.findViewById(R.id.textTotalCals);
 
-        RecyclerView recyclerView = view.findViewById(R.id.caloriesRecyclerView);
+        final RecyclerView recyclerView = view.findViewById(R.id.caloriesRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        CustomRecyclerViewAdapterCalories adapter = new CustomRecyclerViewAdapterCalories(calorieArray);
+        final CustomRecyclerViewAdapterCalories adapter = new CustomRecyclerViewAdapterCalories(calorieArray);
         recyclerView.setAdapter(adapter);
 
-    totalCals.setText(totalCalorie + " total calories");
-        return view;
+         totalCals.setText(totalCalorie + " total calories");
+
+    return view;
 
     }
 
