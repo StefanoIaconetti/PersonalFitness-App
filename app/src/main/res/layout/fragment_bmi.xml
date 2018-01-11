@@ -52,10 +52,10 @@
         android:id="@+id/calculateBMI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
         android:text="@string/BMI_button"
-        android:textSize="@dimen/normal_text_size"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+        android:textSize="@dimen/button_text_size" />
 
     <TextView
         android:id="@+id/BMIInfoTitle"
