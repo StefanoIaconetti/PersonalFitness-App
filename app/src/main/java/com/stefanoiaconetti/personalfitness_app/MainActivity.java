@@ -2,6 +2,7 @@ package com.stefanoiaconetti.personalfitness_app;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -79,7 +80,8 @@ public class MainActivity extends AppCompatActivity
                 //Padding and adding texts to the textviews
                 calorieText.setPadding(15, 0, 0, 0);
                 foodText.setPadding(15, 0, 0, 0);
-                calorieEdit.setRawInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+               // calorieEdit.setRawInputType(InputType.TYPE_CLASS_NUMBER, InputType.TYPE_NUMBER_FLAG_DECIMAL);
+               calorieEdit.setInputType(InputType.TYPE_CLASS_NUMBER);
                 foodText.setText(R.string.add_food);
                 calorieText.setText(R.string.calorie_many);
 
@@ -99,13 +101,19 @@ public class MainActivity extends AppCompatActivity
                         //Users input is now placed into the recycler array
                         String food = foodEdit.getText() + "";
                         String calories = calorieEdit.getText() + "";
-                        CalorieLogFragment.calorieArray.add(new CalorieLog(food, calories + " calories"));
 
-                        //You are either sent to the fragment or it refreshed
-                        FragmentTransaction tran = fm.beginTransaction();
-                         tran.replace(R.id.content, new CalorieLogFragment(), "Calorie Log");
-                         tran.addToBackStack(null);
-                         tran.commit();
+                        if(food.equals("") || calories.equals("")){
+
+                        }else {
+                            CalorieLogFragment.calorieArray.add(new CalorieLog(food, calories + " calories"));
+                            //You are either sent to the fragment or it refreshed
+                            FragmentTransaction tran = fm.beginTransaction();
+                            tran.replace(R.id.content, new CalorieLogFragment(), "Calorie Log");
+                            tran.addToBackStack(null);
+                            tran.commit();
+                            CalorieLogFragment.totalCalorie = CalorieLogFragment.totalCalorie + Integer.parseInt(calories);
+                        }
+
                     }
                 });
             //alertbox is dismissed if button is pressed

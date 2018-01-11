@@ -81,8 +81,8 @@ public class HomeFragment extends Fragment {
         TextView quoteView = (TextView) view.findViewById(R.id.quoteText);
         TextView calNameText = (TextView) view.findViewById(R.id.calNameText);
 
-        if(SettingsFragment.showCals == true){
-            calNameText.setText(SettingsFragment.name + " you have eaten " + "this many calories");
+        if((SettingsFragment.showCals == true) && (SettingsFragment.hasName == true)){
+            calNameText.setText(SettingsFragment.name + " you have eaten " + CalorieLogFragment.totalCalorie + " calories");
         }else if(SettingsFragment.hasName){
             calNameText.setText("Hi " + SettingsFragment.name);
         }
