@@ -9,15 +9,11 @@
     <Button
         android:id="@+id/btnMetricImp"
         android:layout_width="match_parent"
-<<<<<<< HEAD
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
         android:layout_marginVertical="@dimen/activity_vertical_margin"
         android:text="@string/metricText"
         android:textSize="@dimen/button_text_size" />
-=======
-        android:layout_height="wrap_content" />
->>>>>>> 110f536da231625837a22fda433edb0c14a94cb8
 
     <EditText
         android:id="@+id/nameEditText"
