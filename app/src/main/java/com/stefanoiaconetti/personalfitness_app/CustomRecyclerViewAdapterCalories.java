@@ -32,13 +32,25 @@ public class CustomRecyclerViewAdapterCalories extends RecyclerView.Adapter {
 
             ((CustomViewHolder) holder).foodDrinkItem.setText(calories.getFoodDrinkItem());
             ((CustomViewHolder) holder).calories.setText(calories.getCalories());
-            
 
+            //Onclick so item gets removed
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = holder.getAdapterPosition();
+                    String getCal = myCalories.get(position).getCalories();
+                    String getCals = getCal.replace("total", "");
+                     getCals = getCals.replace(  "calories", "");
+                     getCals = getCals.replace(" ", "");
+                    int parsing = Integer.parseInt(getCals);
+
+                    CalorieLogFragment.totalCalorie = CalorieLogFragment.totalCalorie - parsing;
+
+                    myCalories.remove(position);
+                }
+            });
         }
 
-        public void delete(int position){
-            myCalories.remove(position);
-        }
         @Override
         public int getItemCount() {
             if (myCalories != null) {
@@ -55,6 +67,7 @@ public class CustomRecyclerViewAdapterCalories extends RecyclerView.Adapter {
                 super(view);
                 this.foodDrinkItem = view.findViewById(R.id.step);
                 this.calories = view.findViewById(R.id.description);
+
             }
 
         }

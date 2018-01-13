@@ -20,10 +20,11 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/caloriesRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="361dp"
         android:layout_centerInParent="true"
         android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+        android:layout_marginVertical="@dimen/activity_vertical_margin"
+        android:longClickable="true" />
 
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
@@ -34,5 +35,5 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="@dimen/title_size" />
->>>>>>> 110f536da231625837a22fda433edb0c14a94cb8
+
 </LinearLayout>
