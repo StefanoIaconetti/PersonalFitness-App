@@ -79,10 +79,9 @@ public class ContactFragment extends Fragment {
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             String[] emailAddress = {"@string/company_email_address"};
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL, emailAddress);
+                intent.putExtra(Intent.EXTRA_EMAIL, R.string.company_email_address);
                 if(intent.resolveActivity(getActivity().getPackageManager()) != null){
                     startActivity(intent);
                 }

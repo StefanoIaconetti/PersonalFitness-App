@@ -84,8 +84,10 @@ public class BMIFragment extends Fragment {
 
         if(SettingsFragment.isMetric == "Metric"){
             height.setHint(R.string.heightcm_input);
+            weight.setHint(R.string.weight_inputkgs);
         }else{
             height.setHint(R.string.height_input);
+            weight.setHint(R.string.weight_input);
         }
 
         calculateBMI.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +127,7 @@ public class BMIFragment extends Fragment {
 
                     if(SettingsFragment.isMetric == "Metric"){
                         convertedHeightValue = Math.round(feet / 2.54);
+                        weightValue = weightValue * 2.20462262;
                     }
 
                 //Squaring the converted height value

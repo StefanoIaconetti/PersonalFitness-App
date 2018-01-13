@@ -1,6 +1,7 @@
 package com.stefanoiaconetti.personalfitness_app;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,10 +31,12 @@ public class WorkoutFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM3 = "param3";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String mParam3;
 
     private OnFragmentInteractionListener mListener;
 
@@ -50,11 +53,12 @@ public class WorkoutFragment extends Fragment {
      * @return A new instance of fragment WorkoutFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static WorkoutFragment newInstance(String param1, String param2) {
+    public static WorkoutFragment newInstance(String param1, String param2, String param3) {
         WorkoutFragment fragment = new WorkoutFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_PARAM3, param3);
         fragment.setArguments(args);
         return fragment;
     }
@@ -65,6 +69,7 @@ public class WorkoutFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            mParam3 = getArguments().getString(ARG_PARAM3);
          }
     }
 
@@ -76,9 +81,13 @@ public class WorkoutFragment extends Fragment {
 
         TextView workoutDesc = (TextView) view.findViewById(R.id.workoutDesc);
         TextView workoutTitle = (TextView) view.findViewById(R.id.workoutTitle);
-        if(mParam1 != null || mParam2 != null){
+        ImageView image = (ImageView) view.findViewById(R.id.imageViewWorkout);
+        if(mParam1 != null || mParam2 != null || mParam3 != null){
             workoutDesc.setText(mParam1);
             workoutTitle.setText(mParam2);
+           int id = getResources().getIdentifier(mParam3, "drawable", getContext().getPackageName());
+           image.setImageResource(id);
+
         }
 
         return view;
