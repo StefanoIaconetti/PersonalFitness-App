@@ -7,20 +7,76 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <Button
-        android:id="@+id/emailButton"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+    <TextView
+        android:id="@+id/contactText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/email_button"/>
+        android:text="@string/contact_title"
+        android:textAlignment="center"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/title_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+    <Button
+        android:id="@+id/emailButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:text="@string/email_button"
+        android:textSize="@dimen/button_text_size" />
 
     <Button
         android:id="@+id/callButton"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:text="@string/call_button"/>
+        android:text="@string/call_button"
+        android:textSize="@dimen/button_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
 
+    <Button
+        android:id="@+id/addContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/add_contact"
+        android:textSize="@dimen/button_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
+
+    <TextView
+        android:id="@+id/secondContactText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_title2"
+        android:textAlignment="center"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/title_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+    <Button
+        android:id="@+id/socialBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/facebook_button"
+        android:textSize="@dimen/button_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
+
+    <Button
+        android:id="@+id/websiteBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/website_button"
+        android:textSize="@dimen/button_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/map_button"
+        android:textSize="@dimen/button_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
 
 </LinearLayout>

@@ -6,7 +6,11 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <dimen name="title_size">35dp</dimen>
-    <dimen name="quote_size">20dp</dimen>
+    <!-- Text sizes -->
+    <dimen name="title_size">25sp</dimen>
+    <dimen name="subtitle_size">22sp</dimen>
+    <dimen name="normal_text_size">20sp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+
 
 </resources>

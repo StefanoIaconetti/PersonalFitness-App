@@ -1,20 +1,23 @@
 package com.stefanoiaconetti.personalfitness_app;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -28,10 +31,12 @@ public class WorkoutFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM3 = "param3";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String mParam3;
 
     private OnFragmentInteractionListener mListener;
 
@@ -48,11 +53,12 @@ public class WorkoutFragment extends Fragment {
      * @return A new instance of fragment WorkoutFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static WorkoutFragment newInstance(String param1, String param2) {
+    public static WorkoutFragment newInstance(String param1, String param2, String param3) {
         WorkoutFragment fragment = new WorkoutFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_PARAM3, param3);
         fragment.setArguments(args);
         return fragment;
     }
@@ -63,7 +69,8 @@ public class WorkoutFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+            mParam3 = getArguments().getString(ARG_PARAM3);
+         }
     }
 
     @Override
@@ -72,19 +79,19 @@ public class WorkoutFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_workout, container, false);
 
-        ArrayList<WorkoutItem> workout = new ArrayList<WorkoutItem>();
+        TextView workoutDesc = (TextView) view.findViewById(R.id.workoutDesc);
+        TextView workoutTitle = (TextView) view.findViewById(R.id.workoutTitle);
+        ImageView image = (ImageView) view.findViewById(R.id.imageViewWorkout);
+        if(mParam1 != null || mParam2 != null || mParam3 != null){
+            workoutDesc.setText(mParam1);
+            workoutTitle.setText(mParam2);
+           int id = getResources().getIdentifier(mParam3, "drawable", getContext().getPackageName());
+           image.setImageResource(id);
 
-        workout.add(new WorkoutItem("Step 1", "Sit down"));
-        workout.add(new WorkoutItem("Step 2", "Stand up"));
-        RecyclerView recyclerView = view.findViewById(R.id.armsRecyclerView);
+        }
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        CustomRecyclerViewAdapter adapter = new CustomRecyclerViewAdapter(workout);
-        recyclerView.setAdapter(adapter);
         return view;
     }
-
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -108,7 +115,6 @@ public class WorkoutFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

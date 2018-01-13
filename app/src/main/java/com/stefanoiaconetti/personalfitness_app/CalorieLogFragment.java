@@ -4,27 +4,28 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CalendarView;
+import android.widget.TextView;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ScheduleFragment.OnFragmentInteractionListener} interface
+ * {@link CalorieLogFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ScheduleFragment#newInstance} factory method to
+ * Use the {@link CalorieLogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ScheduleFragment extends Fragment {
+public class CalorieLogFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -33,12 +34,12 @@ public class ScheduleFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    CalendarView calendarView;
-    Button calenderBtn;
+    public static ArrayList<CalorieLog> calorieArray = new ArrayList<CalorieLog>();
+    public static int totalCalorie;
 
     private OnFragmentInteractionListener mListener;
 
-    public ScheduleFragment() {
+    public CalorieLogFragment() {
         // Required empty public constructor
     }
 
@@ -48,11 +49,11 @@ public class ScheduleFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ScheduleFragment.
+     * @return A new instance of fragment CalorieLogFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ScheduleFragment newInstance(String param1, String param2) {
-        ScheduleFragment fragment = new ScheduleFragment();
+    public static CalorieLogFragment newInstance(String param1, String param2) {
+        CalorieLogFragment fragment = new CalorieLogFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -72,33 +73,23 @@ public class ScheduleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_schedule, container, false);
+        View view =  inflater.inflate(R.layout.fragment_calorie_log, container, false);
+        final TextView totalCals = (TextView) view.findViewById(R.id.textTotalCals);
 
-        calendarView = (CalendarView) view.findViewById(R.id.calenderView);
-        calenderBtn = (Button) view.findViewById(R.id.schedBtn);
+        final RecyclerView recyclerView = view.findViewById(R.id.caloriesRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        calenderBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        final CustomRecyclerViewAdapterCalories adapter = new CustomRecyclerViewAdapterCalories(calorieArray);
+        recyclerView.setAdapter(adapter);
 
-                Intent calenderIntent = new Intent(Intent.ACTION_INSERT);
-                calenderIntent.setData(CalendarContract.Events.CONTENT_URI);
+         totalCals.setText(totalCalorie + " total calories");
 
-                calenderIntent.putExtra(CalendarContract.Events.TITLE, R.string.schedTitle);
-                calenderIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, R.string.schedLocation);
-                calenderIntent.putExtra(CalendarContract.Events.DESCRIPTION, R.string.schedDesc);
-                calenderIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, calendarView.getDate());
-                calenderIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, calendarView.getDate());
+    return view;
 
-                if(calenderIntent.resolveActivity(getActivity().getPackageManager()) != null){
-                    startActivity(calenderIntent);
-                }
-            }
-        });
-
-        return view;
     }
+
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

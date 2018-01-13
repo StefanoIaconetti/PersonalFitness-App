@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PersonalFitness-App</string>
+    <string name="app_name">Burning Barbell</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -7,7 +7,7 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="ScheduleTitle">Schedule your appointment today!</string>
+    <string name="ScheduleTitle">Schedule your appointment</string>
 
     <!--Contact information-->
     <string name="company_name">Burning Barbell</string>
@@ -17,25 +17,41 @@
     <string name="email_button">Email Us</string>
     <string name="call_button">Call Us</string>
 
-<<<<<<< HEAD
     <string name="BMI_button">Calculate</string>
 
-    //Page titles
+    <!--Page titles -->
     <string name="bmi_calculator_title">BMI Calculator</string>
-    <string name="contact_title">Contact</string>
+    <string name="contact_title">Contact us!</string>
     <string name="home_title">Home</string>
     <string name="schedule_title">Schedule</string>
     <string name="water_intake_calculator_title">Water Intake Calculator</string>
     <string name="workouts_title">Workouts</string>
+    <string name="contact_title2">Or better yet check us out online!</string>
+    <string name="calorielog_title">Your calorie log</string>
 
-    //BMI Calculator input hints
+    <!-- Fab text -->
+    <string name="what_ate">Add your food and calories!</string>
+    <string name="add_food">What food did you eat?</string>
+    <string name="calorie_many">How many calories did it have?</string>
+
+    <!-- Calculator input hints -->
     <string name="height_input">Your height (feet)</string>
+    <string name="heightcm_input">Your height (cm)</string>
     <string name="weight_input">Your weight (lbs)</string>
+    <string name="weight_inputkgs">Your weight (kgs)</string>
+    <string name="age_input">Your age (years)</string>
 
-    //BMI info
-    <string name="bmi_info">BMI Categories:\nUnderweight = 18.5 or lower\nHealthy weight = 18.5–24.9\nOverweight = 25–29.9\nObese = 30 or greater</string>
+    <!-- Contact Fragment buttons -->
+    <string name="facebook_button">Facebook</string>
+    <string name="website_button">burningbarbell.com</string>
+    <string name="add_contact">Add our number!</string>
+    <string name="map_button">Find us on google maps!</string>
 
-=======
+    <!--BMI textviews -->
+    <string name="bmi_title">Calculate your BMI</string>
+    <string name="bmi_info_title">BMI Categories:</string>
+    <string name="bmi_info">Underweight = 18.5 or lower\nHealthy weight = 18.5–24.9\nOverweight = 25–29.9\nObese = 30 or greater</string>
+
     <!--Quote of the day labels-->
     <string name="quoteOne">You can loose more fat by drinking lots of water, our personal water intake calculator can help!</string>
     <string name="quoteTwo">Do not know how to properly workout? Send us a email and we can get you started on our 7 week program!</string>
@@ -44,8 +60,35 @@
     <string name="quoteFive">Rougly 70% of weight loss starts with your diet!</string>
     <string name="quoteSix">Try exercising a little everyday. A simple 30 jumping jacks could suffice and make a huge difference</string>
 
+    <!--Water intake calculator texts -->
+    <string name="oftenExercise">How often do you exercise per day?</string>
+    <string name="waterIntakeTitle">Calculate your recommended water intake</string>
+    <string name="waterIntakeBtn">Lets find out!</string>
+
+    <!-- Schedule texts-->
+    <string name="schedBtnText">Book now</string>
+    <string name="schedTitle">Appointment with Burning Barbell!</string>
+    <string name="schedLocation">1233 Lift Road</string>
+    <string name="schedDesc">Sit down with the Burning Barbell to discuss payments and my future!</string>
+
+    <!-- Settings texts-->
+    <string name="metricText">Metric Conversion</string>
+    <string name="imperialText">Imperial Conversion</string>
+    <string name="enterNameTxt">Enter your name</string>
+    <string name="calorieShow">Show Calories</string>
+    <string name="btnConfirm">Confirm</string>
+
+    <!-- String array to hold information for the waater intake calculator-->
+    <string-array name="exerciseStats">
+        <item>No exercise</item>
+        <item>Not much exercise</item>
+        <item>A little bit of walking</item>
+        <item>Working out for at least 30 minutes</item>
+        <item>Casual 30 minute jog/run</item>
+        <item>Intense training</item>
+    </string-array>
 
 
     <!-- Page titles -->
->>>>>>> staging
+
 </resources>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,21 +70,25 @@ public class ContactFragment extends Fragment {
 
         Button emailButton = (Button) view.findViewById(R.id.emailButton);
         Button callButton = (Button) view.findViewById(R.id.callButton);
+        Button facebookButton = (Button) view.findViewById(R.id.socialBtn);
+        Button addContact  = (Button) view.findViewById(R.id.addContact);
+        Button websiteButton  = (Button) view.findViewById(R.id.websiteBtn);
+        Button mapButton = (Button) view.findViewById(R.id.mapButton);
 
+        //Action so when the email button is pressed it opens up email
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                String[] emailAddress = {"@string/company_email_address"};
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL, emailAddress);
+                intent.putExtra(Intent.EXTRA_EMAIL, R.string.company_email_address);
                 if(intent.resolveActivity(getActivity().getPackageManager()) != null){
                     startActivity(intent);
                 }
             }
         });
 
+        //Call button action so when its pressed it dials a number
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,6 +99,54 @@ public class ContactFragment extends Fragment {
                 }
             }
         });
+        //When pressed our facebook page opens in browser
+       facebookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Burning-Barbell-101181967356989/"));
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+        //When pressed we are added as a contact
+        addContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(Intent.ACTION_INSERT, ContactsContract.Contacts.CONTENT_URI);
+                intent.putExtra(ContactsContract.Intents.Insert.NAME, "Burning Barbell");
+                intent.putExtra(ContactsContract.Intents.Insert.EMAIL, "burningbarbell@gmail.com");
+                intent.putExtra(ContactsContract.Intents.Insert.PHONE, "1234567889");
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+        //When pressed they are linked to our website
+        websiteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://php.scweb.ca/~siaconetti968/AndroidProject/website.html"));
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+        //When pressed they put into google maps and shown a location
+       mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("google.streetview:cbll=42.421683,-82.662247");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+
 
         return view;
     }

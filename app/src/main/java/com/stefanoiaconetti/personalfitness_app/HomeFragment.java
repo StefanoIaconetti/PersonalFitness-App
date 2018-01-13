@@ -1,6 +1,7 @@
 package com.stefanoiaconetti.personalfitness_app;
 
 import android.content.Context;
+import android.media.audiofx.Equalizer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.Random;
+import java.util.Set;
 
 
 /**
@@ -77,7 +79,13 @@ public class HomeFragment extends Fragment {
         int randomQuoteNum = r.nextInt(5);
         //Quoteview is now linked with quoteText
         TextView quoteView = (TextView) view.findViewById(R.id.quoteText);
+        TextView calNameText = (TextView) view.findViewById(R.id.calNameText);
 
+        if((SettingsFragment.showCals == true) && (SettingsFragment.hasName == true)){
+            calNameText.setText(SettingsFragment.name + " you have eaten " + CalorieLogFragment.totalCalorie + " calories");
+        }else if(SettingsFragment.hasName){
+            calNameText.setText("Hi " + SettingsFragment.name);
+        }
 
         //Switch case adds random quote so the quote changes everytime tha app opens
         switch (randomQuoteNum){
