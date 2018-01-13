@@ -1,5 +1,6 @@
 package com.stefanoiaconetti.personalfitness_app;
 
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,6 +48,8 @@ public class CustomRecyclerViewAdapterCalories extends RecyclerView.Adapter {
                     CalorieLogFragment.totalCalorie = CalorieLogFragment.totalCalorie - parsing;
 
                     myCalories.remove(position);
+                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.content, new CalorieLogFragment(), "Calorie").addToBackStack(null).commit();
                 }
             });
         }
