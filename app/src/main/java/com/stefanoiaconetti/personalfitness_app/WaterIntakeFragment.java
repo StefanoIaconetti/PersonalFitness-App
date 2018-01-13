@@ -82,7 +82,7 @@ public class WaterIntakeFragment extends Fragment {
 
         //Textview for the calculation
         final TextView calculation = (TextView) view.findViewById(R.id.calculationsText);
-
+        EditText texthint = (EditText) view.findViewById(R.id.weightEdit);
 
         //String exerciseStats that is in the strings.xml is being called
         String[] exerArray = getResources().getStringArray(R.array.exerciseStats);
@@ -101,7 +101,11 @@ public class WaterIntakeFragment extends Fragment {
 
         //Weight edit text being populated
         weight = (EditText) view.findViewById(R.id.weightEdit);
-
+        if(SettingsFragment.isMetric == "Metric"){
+            texthint.setHint(R.string.weight_inputkgs);
+        }else{
+            weight.setHint(R.string.weight_input);
+        }
 
 
             //Calculations when button is pressed
@@ -120,11 +124,16 @@ public class WaterIntakeFragment extends Fragment {
                         if (weightValue <= 0 || weightValue >= 500) {
                             calculation.setText("Sorry your weight cannot be calculated");
                         } else {
+
                             //Calculations will be your weight multiplyed by 0.02841308(.5 of a oz in litres)
-                            double beforeExercise = weightValue * 0.5;
+                            double beforeExercise = 0; //= weightValue * 0.5;
 
                             if (SettingsFragment.isMetric == "Metric"){
+                                beforeExercise = weightValue * 2.20462262;
+                                beforeExercise = beforeExercise * 0.5;
                                 beforeExercise = beforeExercise * 0.02841308;
+                            }else{
+                                beforeExercise = weightValue * 0.5;
                             }
 
                             int userSelection = spinner.getSelectedItemPosition();
@@ -132,22 +141,22 @@ public class WaterIntakeFragment extends Fragment {
 
                             switch (userSelection) {
                                 case 0:
-                                    userSelectionInt = 0;
-                                    break;
-                                case 1:
-                                    userSelectionInt = 0.3;
-                                    break;
-                                case 2:
-                                    userSelectionInt = 0.5;
-                                    break;
-                                case 3:
-                                    userSelectionInt = 0.8;
-                                    break;
-                                case 4:
                                     userSelectionInt = 1;
                                     break;
-                                case 5:
+                                case 1:
+                                    userSelectionInt = 1.3;
+                                    break;
+                                case 2:
+                                    userSelectionInt = 1.5;
+                                    break;
+                                case 3:
+                                    userSelectionInt = 1.8;
+                                    break;
+                                case 4:
                                     userSelectionInt = 2;
+                                    break;
+                                case 5:
+                                    userSelectionInt = 3;
                                     break;
                                 default:
                                     userSelectionInt = 0;
@@ -163,7 +172,6 @@ public class WaterIntakeFragment extends Fragment {
                             }else{
                                 finalCalc = decimalPlace.format(afterExercise) + " ounces";
                             }
-
                             calculation.setText(finalCalc);
                         }
                     }
