@@ -171,6 +171,10 @@ public class MainActivity extends AppCompatActivity
             tran.replace(R.id.content, new SettingsFragment(), "Settings");
             tran.addToBackStack(null);
             tran.commit();
+        }else if (id == R.id.action_credits) {
+            tran.replace(R.id.content, new CreditsFragment(), "Credits");
+            tran.addToBackStack(null);
+            tran.commit();
         }
 
         return super.onOptionsItemSelected(item);

@@ -6,6 +6,7 @@
     <string name="hello_blank_fragment">Please add some real text here.</string>
 
     <string name="action_settings">Settings</string>
+    <string name="action_credits">Credits</string>
 
     <string name="ScheduleTitle">Schedule your appointment</string>
 
@@ -78,7 +79,13 @@
     <string name="calorieShow">Show Calories</string>
     <string name="btnConfirm">Confirm</string>
 
-    <!-- String array to hold information for the waater intake calculator-->
+    <!-- Credits links -->
+    <string name="recyclerView_onClick"><a>RecyclerView onClickListener</a></string>
+    <string name="onClick_cardView"><a>Replacing fragments in the onClick of a CardView</a></string>
+    <string name="check_if_number"><a>Checking if a value is a number</a></string>
+
+
+    <!-- String array to hold information for the water intake calculator-->
     <string-array name="exerciseStats">
         <item>No exercise</item>
         <item>Not much exercise</item>
