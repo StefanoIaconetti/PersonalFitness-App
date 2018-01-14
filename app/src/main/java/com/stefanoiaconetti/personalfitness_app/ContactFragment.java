@@ -138,8 +138,9 @@ public class ContactFragment extends Fragment {
        mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("google.streetview:cbll=42.421683,-82.662247");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                Uri location = Uri.parse("geo:0,0?q=42.247916, -83.018506(Burning Barbell)");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(location);
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 }
