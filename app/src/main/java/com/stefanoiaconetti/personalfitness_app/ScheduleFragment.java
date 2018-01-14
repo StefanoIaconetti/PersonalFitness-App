@@ -84,11 +84,10 @@ public class ScheduleFragment extends Fragment {
 
                 Intent calenderIntent = new Intent(Intent.ACTION_INSERT);
                 calenderIntent.setData(CalendarContract.Events.CONTENT_URI);
-
-                calenderIntent.putExtra(CalendarContract.Events.TITLE, R.string.schedTitle);
-                calenderIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, R.string.schedLocation);
-                calenderIntent.putExtra(CalendarContract.Events.DESCRIPTION, R.string.schedDesc);
                 calenderIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, calendarView.getDate());
+                calenderIntent.putExtra(CalendarContract.Events.TITLE, "Appointment with Burning Barbell!");
+                calenderIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "1233 Lift Road");
+                calenderIntent.putExtra(CalendarContract.Events.DESCRIPTION, "Sit down with the Burning Barbell to discuss payments and my future!");
                 calenderIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, calendarView.getDate());
 
                 if(calenderIntent.resolveActivity(getActivity().getPackageManager()) != null){
