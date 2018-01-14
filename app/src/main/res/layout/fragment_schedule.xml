@@ -22,11 +22,12 @@
         android:id="@+id/calenderView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:minDate="01/01/2018"
-        android:maxDate="02/28/2018"
         android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+        android:layout_marginVertical="@dimen/activity_vertical_margin"
+        android:layout_weight="1"
+        android:fadeScrollbars="false"
+        android:maxDate="02/28/2018"
+        android:minDate="01/01/2018" />
 
     <Button
         android:id="@+id/schedBtn"
