@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.stefanoiaconetti.personalfitness_app.CreditsFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/link1"
         android:layout_width="match_parent"
@@ -13,4 +12,5 @@
         android:text="https://cmsdk.com/java/recyclerview-onitemclicklistener-not-working.html"
         android:textSize="@dimen/normal_text_size"
         tools:text="@string/recyclerView_onClick" />
-</android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
