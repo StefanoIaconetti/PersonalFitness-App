@@ -80,9 +80,14 @@ public class ContactFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
+
+                String[] EmailAddress = {"burningbarbell@gmail.com"};
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL, R.string.company_email_address);
-                if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+
+                intent.putExtra(Intent.EXTRA_EMAIL, EmailAddress);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Burning Barbell");
+                intent.putExtra(Intent.EXTRA_TEXT, "Hello, I have a question about ");
+                if(intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 }
             }
