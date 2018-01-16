@@ -5,12 +5,13 @@ are most proud of is to log their calories. The user if they have any questions 
 call, or text our company email and phone. You are also able to find us via google maps or scheduele an appointment. 
 
 # Built With
--Android Studio
--Github
+* Android Studio - Used for programming and testing our program.
+* Github - Used for sharing projects with partners to ease sending code back and forth.
+* Discord - Used for communication between eachother
 
 # Authors
-- Max Fontes
-- Stefano Iaconetti
+* - Max Fontes
+* - Stefano Iaconetti
 
 # Acknowledgments
 We would like to acknowledge our teachers and students of the Mobile Applications course in St Clair College. A special acknowledgement 
