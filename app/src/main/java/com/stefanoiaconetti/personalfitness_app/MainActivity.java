@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity
         ScheduleFragment.OnFragmentInteractionListener,
         CalorieLogFragment.OnFragmentInteractionListener,
         WorkoutViewPager.OnFragmentInteractionListener,
-        SettingsFragment.OnFragmentInteractionListener{
+        SettingsFragment.OnFragmentInteractionListener,
+        CreditsFragment.OnFragmentInteractionListener{
 
     public FragmentManager fm = getSupportFragmentManager();
     final Context context = this;
@@ -169,6 +170,11 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             tran.replace(R.id.content, new SettingsFragment(), "Settings");
+            tran.addToBackStack(null);
+            tran.commit();
+        }
+        else if (id == R.id.action_credits) {
+            tran.replace(R.id.content, new CreditsFragment(), "Credits");
             tran.addToBackStack(null);
             tran.commit();
         }

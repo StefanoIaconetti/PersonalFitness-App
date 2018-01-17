@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.stefanoiaconetti.personalfitness_app.CreditsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/link1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:text="@string/recyclerView_onClick"
+        android:textAppearance="@color/primaryText"
+        android:textSize="@dimen/normal_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+    <TextView
+        android:id="@+id/link2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:text="@string/onClick_cardView"
+        android:textAppearance="@color/primaryText"
+        android:textSize="@dimen/normal_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+    <TextView
+        android:id="@+id/link3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:text="@string/check_if_number"
+        android:textAppearance="@color/primaryText"
+        android:textSize="@dimen/normal_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+    <TextView
+        android:id="@+id/link4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:text="@string/slide_in_animations"
+        android:textAppearance="@color/primaryText"
+        android:textSize="@dimen/normal_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+    <TextView
+        android:id="@+id/link5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:text="@string/creating_spinners"
+        android:textAppearance="@color/primaryText"
+        android:textSize="@dimen/normal_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+    <TextView
+        android:id="@+id/link6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:text="@string/creating_a_splash_screen"
+        android:textAppearance="@color/primaryText"
+        android:textSize="@dimen/normal_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+    <TextView
+        android:id="@+id/link7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:text="@string/textView_links"
+        android:textAppearance="@color/primaryText"
+        android:textSize="@dimen/normal_text_size"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+</LinearLayout>

@@ -85,11 +85,11 @@ public class WorkoutViewPager extends Fragment {
 
         public Fragment getItem(int position){
             switch(position){
-                case 0: return WorkoutFragment.newInstance("Grab a weight, while standing still bring the weight to your chest using your bicep","Arm Workout",  "burning_barbell_logo");
-                case 1: return WorkoutFragment.newInstance("Laydown then pull yourself upwards bringing your knees to your chest","Ab workout",  "burning_barbell_logo");
-                case 3: return WorkoutFragment.newInstance("Set a desired weight then pull on the bar using your back","Back Workout",  "burning_barbell_logo");
-                case 4: return WorkoutFragment.newInstance("From a standing position go to a sitting position while still in the air","Leg workout",  "burning_barbell_logo");
-                default: return WorkoutFragment.newInstance("Grab a desired weight and drag the weight so its leveled with your shoulders","Shoulder workout",  "burning_barbell_logo");
+                case 0: return WorkoutFragment.newInstance("Grab a weight, while standing still bring the weight to your chest using your bicep","Arm Workout",  "bicep");
+                case 1: return WorkoutFragment.newInstance("Laydown then pull yourself upwards bringing your knees to your chest","Ab workout",  "ab_workout");
+                case 3: return WorkoutFragment.newInstance("Set a desired weight then pull on the bar using your back","Back Workout",  "back");
+                case 4: return WorkoutFragment.newInstance("From a standing position go to a sitting position while still in the air","Leg workout",  "leg");
+                default: return WorkoutFragment.newInstance("Grab a desired weight and drag the weight so its leveled with your shoulders","Shoulder workout",  "shoulder");
             }
         }
 
