@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity
         ScheduleFragment.OnFragmentInteractionListener,
         CalorieLogFragment.OnFragmentInteractionListener,
         WorkoutViewPager.OnFragmentInteractionListener,
-        SettingsFragment.OnFragmentInteractionListener{
+        SettingsFragment.OnFragmentInteractionListener,
+        CreditsFragment.OnFragmentInteractionListener{
 
     public FragmentManager fm = getSupportFragmentManager();
     final Context context = this;

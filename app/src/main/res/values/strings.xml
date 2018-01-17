@@ -80,10 +80,13 @@
     <string name="btnConfirm">Confirm</string>
 
     <!-- Credits links -->
-    <string name="recyclerView_onClick"><a>RecyclerView onClickListener</a></string>
-    <string name="onClick_cardView"><a>Replacing fragments in the onClick of a CardView</a></string>
-    <string name="check_if_number"><a>Checking if a value is a number</a></string>
-
+    <string name="recyclerView_onClick"><a href = "https://cmsdk.com/java/recyclerview-onitemclicklistener-not-working.html">RecyclerView onClickListener</a></string>
+    <string name="onClick_cardView"><a href = "https://stackoverflow.com/questions/35694276/how-to-replace-fragments-on-the-onclick-of-cardview">Replacing fragments in the onClick of a CardView</a></string>
+    <string name="check_if_number"><a href = "https://stackoverflow.com/questions/17853360/check-entered-value-is-number-or-not">Checking if a value is a number</a></string>
+    <string name="slide_in_animations"><a href = "https://stackoverflow.com/questions/5151591/android-left-to-right-slide-animation">Creating animations</a></string>
+    <string name="creating_spinners"><a href = "https://developer.android.com/guide/topics/ui/controls/spinner.html">Creating a spinner</a></string>
+    <string name="creating_a_splash_screen"><a href = "https://www.bignerdranch.com/blog/splash-screens-the-right-way/">Creating a Splash Screen</a></string>
+    <string name="textView_links"><a href = "https://stackoverflow.com/questions/2734270/how-do-i-make-links-in-a-textview-clickable">Making clickable links</a></string>
 
     <!-- String array to hold information for the water intake calculator-->
     <string-array name="exerciseStats">

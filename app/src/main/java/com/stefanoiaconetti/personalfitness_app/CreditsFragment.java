@@ -1,12 +1,14 @@
 package com.stefanoiaconetti.personalfitness_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -26,6 +28,14 @@ public class CreditsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    TextView link1;
+    TextView link2;
+    TextView link3;
+    TextView link4;
+    TextView link5;
+    TextView link6;
+    TextView link7;
 
     private OnFragmentInteractionListener mListener;
 
@@ -61,10 +71,76 @@ public class CreditsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_credits, container, false);
+
+        link1 = (TextView) view.findViewById(R.id.link1);
+        link2 = (TextView) view.findViewById(R.id.link2);
+        link3 = (TextView) view.findViewById(R.id.link3);
+        link4 = (TextView) view.findViewById(R.id.link4);
+        link5 = (TextView) view.findViewById(R.id.link5);
+        link6 = (TextView) view.findViewById(R.id.link6);
+        link7 = (TextView) view.findViewById(R.id.link7);
+
+        link1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse("https://cmsdk.com/java/recyclerview-onitemclicklistener-not-working.html"));
+                startActivity(browser);
+            }
+        });
+        link2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse("https://stackoverflow.com/questions/35694276/how-to-replace-fragments-on-the-onclick-of-cardview"));
+                startActivity(browser);
+            }
+        });
+        link3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse("https://stackoverflow.com/questions/17853360/check-entered-value-is-number-or-not"));
+                startActivity(browser);
+            }
+        });
+        link4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse("https://stackoverflow.com/questions/5151591/android-left-to-right-slide-animation"));
+                startActivity(browser);
+            }
+        });
+        link5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse("https://developer.android.com/guide/topics/ui/controls/spinner.html"));
+                startActivity(browser);
+            }
+        });
+        link6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bignerdranch.com/blog/splash-screens-the-right-way/"));
+                startActivity(browser);
+            }
+        });
+        link7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse("https://stackoverflow.com/questions/2734270/how-do-i-make-links-in-a-textview-clickable"));
+                startActivity(browser);
+            }
+        });
+
 
         return view;
     }

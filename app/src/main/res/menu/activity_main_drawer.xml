@@ -19,7 +19,7 @@
         <item
             android:id="@+id/nav_calorie"
             android:icon="@drawable/ic_bookmark_black_24dp"
-            android:title="Log your calories!" />
+            android:title="Calorie Tracker" />
         <item
             android:id="@+id/nav_schedule"
             android:icon="@drawable/ic_date_range_black_24dp"
