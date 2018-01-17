@@ -80,9 +80,14 @@ public class ContactFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
+
+                String[] EmailAddress = {"burningbarbell@gmail.com"};
                 intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL, R.string.company_email_address);
-                if(intent.resolveActivity(getActivity().getPackageManager()) != null){
+
+                intent.putExtra(Intent.EXTRA_EMAIL, EmailAddress);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Burning Barbell");
+                intent.putExtra(Intent.EXTRA_TEXT, "Hello, I have a question about ");
+                if(intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 }
             }
@@ -138,8 +143,9 @@ public class ContactFragment extends Fragment {
        mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("google.streetview:cbll=42.421683,-82.662247");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                Uri location = Uri.parse("geo:0,0?q=42.247916, -83.018506(Burning Barbell)");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(location);
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 }
