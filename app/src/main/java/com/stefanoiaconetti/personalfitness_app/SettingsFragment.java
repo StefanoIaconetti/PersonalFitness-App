@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +32,7 @@ public class SettingsFragment extends Fragment {
     public static boolean hasName = false;
     public static boolean showCals = false;
     public static String beforeMetric = "Imperial";
-
+    FragmentManager fm;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -115,7 +117,7 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-
+        fm = getActivity().getSupportFragmentManager();
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +140,13 @@ public class SettingsFragment extends Fragment {
                 }else{
                     showCals = false;
                 }
+
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.setCustomAnimations(R.anim.slide_in, R.anim.slide_out);;
+                transaction.replace(R.id.content, new HomeFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+
             }
         });
         return view;

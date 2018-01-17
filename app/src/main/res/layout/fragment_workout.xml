@@ -28,9 +28,9 @@
     <ImageView
         android:id="@+id/imageViewWorkout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_foreground"
+        android:layout_height="340dp"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
         android:layout_marginVertical="@dimen/activity_vertical_margin"
-        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"/>
+        android:src="@drawable/ic_launcher_foreground" />
 
 </LinearLayout>
