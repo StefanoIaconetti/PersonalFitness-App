@@ -20,7 +20,7 @@ to Cai Filiault for assisting us with this program. Stack overflow for helping u
 we thought.
 
 # ScreenShots
-![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(72).png)
+![alt text](https://github.com/StefanoIaconetti/PersonalFitness-App/blob/master/Screenshot%20(72).png)
 ![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(73).png)
 ![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(74).png)
 ![alt text](https://github.com/StefanoIaconetti/Restaurant-Program/blob/master/Screenshot%20(75).png)
