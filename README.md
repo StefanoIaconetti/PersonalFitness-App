@@ -4,6 +4,7 @@ Burning Barbell is a company we created that creates apps. The app that we have 
 to do many different things. Like calculate their Body Mass Index or calculate how much water they need to consume daily, or something we
 are most proud of is to log their calories. The user if they have any questions can head over to the contact portion of the app to either email,
 call, or text our company email and phone. You are also able to find us via google maps or scheduele an appointment. 
+
 This code is free to use as long as we are credited. The company that was created for this application "Burning Barbell" does not exist and was used for our app to give it a better purpose.
 
 # Built With
